@@ -1,0 +1,47 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>扫描装车</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="sealScan_content_info">
+      <div class="carInfo">
+        <p>发车车序号：</p>
+        <div class="select_type">
+          <p>全部</p>
+          <p>L</p>
+          <p>M</p>
+          <p>D</p>
+        </div>
+      </div>
+      <div class="ui-form-item query_info">
+        <input type="text" value="" placeholder="请输入重量" style="padding-left: 10px;">
+        <i class="sealScan_input_icon sealScan_query"></i>
+      </div>
+    </div>
+
+
+    <div class="details">统计：共计装车3票，正常装车3票，少件0票</div>
+    <div>
+      <ul>
+        <li class="bg-f m-t-10" ng-repeat="data in scanLoadingDetailData" ng-class="$first?'m-t-0':''">
+          <div class="infoItem">
+            <p>标签号：{{data.no}}</p>
+            <p>货号：{{data.order}}</p>
+          </div>
+          <div class="p-td-10 t-c b-td f16 check" ng-click="goCheckDetail()">删除</div>
+        </li>
+      </ul>
+    </div>
+
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-assertive">
+    <button type="button" class="button-b" ng-click="">上传</button>
+  </ion-footer-bar>
+</ion-view>
+
+

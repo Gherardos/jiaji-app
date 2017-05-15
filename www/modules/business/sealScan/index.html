@@ -1,0 +1,99 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>封签扫描</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+      <ion-tabs class="tabs-positive tabs-striped tabs-top ">
+        <ion-tab title="发车">
+          <ion-view>
+            <ion-content class="sealScan_content">
+              <div class="sealScan_content_info">
+                <div class="carInfo">
+                  <p>发车车序号：</p>
+                  <div class="select_type">
+                    <p ng-click="queryType(0,'A')" ng-class="{'selectedQuery': selectAll == true}">全部</p>
+                    <p ng-click="queryType(0,'L')" ng-class="{'selectedQuery': selectL == true}">L</p>
+                    <p ng-click="queryType(0,'M')" ng-class="{'selectedQuery': selectM == true}">M</p>
+                    <p ng-click="queryType(0,'D')" ng-class="{'selectedQuery': selectD == true}">D</p>
+                  </div>
+                </div>
+                <div class="ui-form-item query_info">
+                  <input type="text" value="" placeholder="请输入重量" style="padding-left: 10px;">
+                  <i class="sealScan_input_icon sealScan_query"></i>
+                </div>
+                <div class="sealScan_info">
+                  <ul class="b-a">
+                    <li ng-repeat="toCar in toCarData" ng-class="$last?'':'sealScan_info_b_b'">
+                      <div class="sealScan_left">
+                        <i ng-if="toCar.flag == 0" class="icon sealScan_status_yes"></i>
+                        <i ng-if="toCar.flag == 1" class="icon sealScan_status_no"></i>
+                      </div>
+                      <div class="sealScan_right">
+                        <p ng-style="{'color':toCar.flag == 1 ? '#fc8a78':'' }">封签号：{{toCar.no}}</p>
+                        <p ng-style="{'color':toCar.flag == 1 ? '#fc8a78':'' }">状态：{{toCar.status}}</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="ui-form-item query_info">
+                  <label>封签号</label>
+                  <input type="text" value="" placeholder="请输入查询的封签号">
+                  <i class="sealScan_input_icon sealScan_scan"></i>
+                </div>
+              </div>
+            </ion-content>
+          </ion-view>
+        </ion-tab>
+        <ion-tab title="到车">
+          <ion-view>
+            <ion-content class="sealScan_content">
+              <div class="sealScan_content_info">
+                <div class="carInfo">
+                  <p>到车车序号：</p>
+                  <div class="select_type">
+                    <p ng-click="queryType(1,'A')" ng-class="{'selectedQuery': selectAll == true}">全部</p>
+                    <p ng-click="queryType(1,'L')" ng-class="{'selectedQuery': selectL == true}">L</p>
+                    <p ng-click="queryType(1,'M')" ng-class="{'selectedQuery': selectM == true}">M</p>
+                    <p ng-click="queryType(1,'D')" ng-class="{'selectedQuery': selectD == true}">D</p>
+                  </div>
+                </div>
+                <div class="ui-form-item query_info">
+                  <input type="text" value="" placeholder="请输入重量" style="padding-left: 10px;">
+                  <i class="sealScan_input_icon sealScan_query"></i>
+                </div>
+                <div class="sealScan_info">
+                  <ul class="b-a">
+                    <li ng-repeat="toCar in toCarData" ng-class="$last?'':'sealScan_info_b_b'">
+                      <div class="sealScan_left">
+                        <i ng-if="toCar.flag == 0" class="icon sealScan_status_yes"></i>
+                        <i ng-if="toCar.flag == 1" class="icon sealScan_status_no"></i>
+                      </div>
+                      <div class="sealScan_right">
+                        <p ng-style="{'color':toCar.flag == 1 ? '#fc8a78':'' }">封签号：{{toCar.no}}</p>
+                        <p ng-style="{'color':toCar.flag == 1 ? '#fc8a78':'' }">状态：{{toCar.status}}</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="ui-form-item query_info">
+                  <label>封签号</label>
+                  <input type="text" value="" placeholder="请输入查询的封签号">
+                  <i class="sealScan_input_icon sealScan_scan"></i>
+                </div>
+              </div>
+            </ion-content>
+          </ion-view>
+        </ion-tab>
+      </ion-tabs>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-assertive">
+    <button type="button" class="button-b">上传</button>
+  </ion-footer-bar>
+</ion-view>
+
+

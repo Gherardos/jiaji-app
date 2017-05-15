@@ -1,0 +1,88 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>运价查询</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+        <div class="list bg-f b-td">
+          <label class="item item-input item-select select_list b-d-i">
+            <div class="input-label">运输产品</div>
+            <select>
+              <option selected>请选择运输产品</option>
+              <option>Blue</option>
+              <option>Green</option>
+              <option>Red</option>
+            </select>
+          </label>
+
+          <label class="item item-input item-select select_list b-d-i">
+            <div class="input-label">起点机构</div>
+            <select>
+              <option selected>请选择起点机构</option>
+              <option>Blue</option>
+              <option>Green</option>
+              <option>Red</option>
+            </select>
+          </label>
+
+          <label class="item item-input item-select select_list b-d-i">
+            <div class="input-label">终点机构</div>
+            <select>
+              <option selected>请选择终点机构</option>
+              <option>Blue</option>
+              <option>Green</option>
+              <option>Red</option>
+            </select>
+          </label>
+
+          <label class="item item-input item-select select_list b-d-i">
+            <div class="input-label">货物类型</div>
+            <select>
+              <option selected>请选择货物类型</option>
+              <option>Blue</option>
+              <option >Green</option>
+              <option>Red</option>
+            </select>
+          </label>
+
+          <div class="ui-form-item b-d">
+            <label>重量</label>
+            <input type="text" value="" placeholder="请输入重量">
+            <span style="padding: 0 15px;">kg</span>
+          </div>
+          <div class="ui-form-item">
+            <label>体积</label>
+            <input type="text" value="" placeholder="请输入体积">
+            <span style="padding: 0 15px;">m³</span>
+          </div>
+        </div>
+      <div class="p-td-35 t-c">
+        <button type="button" class="button-s" ng-click="goQueryInfo()">查询</button>
+      </div>
+      <div ng-if="isShowAllProductInfo && tipDate.length >0" class="fareQuery_info">
+        <ul class="b-a m-d-15">
+          <li ng-repeat="tip in tipDate" ng-class="$last?'':'fareQuery_b_b'">
+            <p>{{tip.title}}</p>
+            <p>{{tip.date}}</p>
+            <p>{{tip.money}}</p>
+          </li>
+        </ul>
+      </div>
+    <div class="footer" ng-if="isShowAllProductInfo && tipDate.length >0">
+      <p>提示：价格并非实际价格，改价格仅供参考</p>
+      <p>详情咨询：400-820-556</p>
+    </div>
+  </ion-content>
+ <!-- <ion-footer-bar ng-if="isShowAllProductInfo && tipDate.length >0" align-title="left" class="bar-assertive">
+    <div class="fareQuery_footer_info">
+      <p>提示：价格并非实际价格，改价格仅供参考</p>
+      <p>详情咨询：400-820-556</p>
+    </div>
+  </ion-footer-bar>-->
+</ion-view>
+
+

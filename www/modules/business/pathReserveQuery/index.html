@@ -1,0 +1,81 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>线路库存查询</ion-nav-title>
+      <ion-nav-buttons side="right">
+        <button class="button title-search-icon" ng-click="modal.show()">
+          <i class="icon title-search"></i>
+        </button>
+      </ion-nav-buttons>
+    </ion-header-bar>
+  </ion-nav-bar>
+
+  <ion-content>
+    <div class="pathReserveQueryTip m-b-10 bg-f">
+      <span>票数:4票</span>
+      <span>件数:40件</span>
+      <span>重量:400kg</span>
+      <span>体积:4立方</span>
+    </div>
+    <div class="searchList">
+      <ul>
+        <li ng-repeat="data in pathReserveQueryData" ng-class="">
+          <div class="searchItem">
+            <div>
+              <p>运单号码：{{data.order}}</p>
+              <p>
+                <i class="icon date_icon m-r-10"></i>
+                {{data.day}}</p>
+            </div>
+            <div>
+              <p>货号：{{data.no}}</p>
+            </div>
+            <div>
+              <p>货物件数：{{data.goodsSum}}</p>
+              <p>重量：{{data.weight}}</p>
+              <p>体积：{{data.volume}}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+
+  <script id="modal.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-header-bar class="bar-huatek-modal">
+        <a class="button close-modal-icon" ng-click="closeModal()">
+          <i class="icon closeModalDialog"></i>
+        </a>
+        <h1 class="title">查询</h1>
+      </ion-header-bar>
+      <ion-content>
+        <div class="list">
+          <div class="ui-form-item b-d">
+            <label>装车车序</label>
+            <input type="text" ng-model="newQuery.loadingOrder" placeholder="请输入要查询的装车车序">
+          </div>
+          <div class="ui-form-item b-d">
+            <label>车牌号</label>
+            <input type="text" ng-model="newQuery.plateNum" placeholder="请输入要查询的车牌号">
+          </div>
+          <div class="ui-form-item b-d">
+            <label>装车路线</label>
+            <input type="text" ng-model="newQuery.loadingRoute" placeholder="请输入要查询的装车路线">
+          </div>
+          <div class="p-td-35 t-c">
+            <button type="button" class="button-s" ng-click="pathReserveResult(newQuery)">查询</button>
+          </div>
+        </div>
+      </ion-content>
+    </ion-modal-view>
+  </script>
+
+</ion-view>
+
+
+
+

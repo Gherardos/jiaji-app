@@ -1,0 +1,104 @@
+  <ion-view>
+    <ion-nav-bar class="bar-huatek">
+      <ion-header-bar class="bar-huatek">
+        <ion-nav-back-button>
+          <i class="icon_back goBack"></i>
+        </ion-nav-back-button>
+        <ion-nav-title>扫描装车</ion-nav-title>
+        <ion-nav-buttons side="right">
+          <p>装车统计</p>
+        </ion-nav-buttons>
+      </ion-header-bar>
+    </ion-nav-bar>
+    <ion-content>
+      <div class="bg-f b-td">
+        <form>
+
+          <label class="item item-input item-select select_list b-d-i">
+            <div class="input-label">车序号</div>
+            <select>
+              <option selected>请选择车序号</option>
+              <option>11111</option>
+              <option>22222</option>
+              <option>33333</option>
+            </select>
+          </label>
+
+          <!--<label class="item item-input item-select select_list b-d-i">
+            <div class="input-label">卸货点</div>
+            <select>
+              <option selected>请选择卸货地点</option>
+              <option>北京</option>
+              <option>上海</option>
+              <option>广州</option>
+            </select>
+          </label>-->
+          <div class="ui-form-item ui-form-item-link b-d">
+            <label>卸货点</label>
+            <ionic-city-picker class="cityPicker" backdrop=true backdrop-click-to-close=false options='vm.CityPickData2' id="selectCity"></ionic-city-picker>
+          </div>
+
+          <div class="ui-form-item ui-form-item-link b-d">
+            <label>运单号</label>
+            <input type="text" ng-model="user.order" placeholder="请输入运单号">
+          </div>
+
+          <div class="ui-form-item ui-form-item-link b-d">
+            <label>件数</label>
+            <div class="sealLoad_select_amount">
+              <button type="button" ng-click="minus(input.total)" ng-class="{cursors:true}">-</button>
+              <input type="tel" ng-model="input.total">
+              <button type="button" ng-click="adds(input.total)" ng-class="{cursors:true}">+</button>
+            </div>
+          </div>
+
+          <label class="item item-input item-select select_list b-d-i">
+            <div class="input-label">货物状态</div>
+            <select>
+              <option selected>请选择货物状态</option>
+              <option>良好</option>
+              <option>破损</option>
+              <option>退货</option>
+            </select>
+          </label>
+
+          <div class="ui-form-item b-d">
+            <label>标签号</label>
+            <input type="text" value="" placeholder="">
+          </div>
+          <div class="ui-form-item b-d">
+            <label>笼号</label>
+            <input type="text" value="" placeholder="">
+          </div>
+          <div class="ui-form-item b-d">
+            <label>包好</label>
+            <input type="text" value="" placeholder="">
+          </div>
+          <div class="ui-form-item bar-assertive" >
+            <label>已扫件数</label>
+            <input type="text" value="" placeholder="">
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <ul>
+          <li class="bg-f m-t-10" ng-repeat="data in scanLoadingNextData">
+            <div class="infoItem">
+              <p>标签号：{{data.labelID}}</p>
+              <p>货号：{{data.id}}</p>
+            </div>
+            <div class="p-td-10 t-c b-td f16 check" ng-click="goDelete(data,$index)">删除</div>
+          </li>
+        </ul>
+      </div>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="bar-assertive">
+      <div class="button-Two-way">
+        <button type="button" class="button-b button-previous-bg" ng-click="goScanLoadingPre()">上一步</button>
+        <button type="button" class="button-b" ng-click="goScanLoadingDetail()">下一步</button>
+      </div>
+    </ion-footer-bar>
+  </ion-view>
+
+

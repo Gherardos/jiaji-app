@@ -1,0 +1,33 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>投诉录入</ion-nav-title>
+      <ion-nav-buttons side="right">
+        <button class="button title-search-icon" ng-click="goSearchHistory()">
+          <i class="icon complaintsList_icon"></i>
+        </button>
+      </ion-nav-buttons>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+      <div class="searchBox">
+        <input type="text" placeholder="请输入单号">
+        <i class="icon search"></i>
+      </div>
+      <div>
+        <ul>
+          <li ng-repeat="data in complaintsData" class="bg-f m-t-10">
+            <div class="infoItem">
+              <p>投诉单号：{{data.no}}</p>
+              <p>被投诉机构：{{data.organization}}</p>
+              <p>投诉类型：{{data.type}}</p>
+            </div>
+            <div class="p-td-10 t-c b-td f16 check" ng-click="goCheckDetail()">查看</div>
+          </li>
+        </ul>
+    </div>
+  </ion-content>
+</ion-view>

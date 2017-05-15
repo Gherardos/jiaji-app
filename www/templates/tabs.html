@@ -1,0 +1,32 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+  <!-- 办理托运 -->
+  <ion-tab title="办理托运" icon-off="tab-consign" icon-on="tab-consign-active" href="#/tab/home">
+    <ion-nav-view name="tab-home"></ion-nav-view>
+  </ion-tab>
+
+  <!-- 运价查询 -->
+  <ion-tab title="运价查询" icon-off="icon-fareQuery" icon-on="icon-fareQuery-active" href="#/fareQuery">
+    <ion-nav-view name="tab-chats"></ion-nav-view>
+  </ion-tab>
+
+  <!--  封签扫描 -->
+  <ion-tab title="封签扫描" icon-off="icon-sealScans" icon-on="icon-sealScans-active" href="#/sealScan">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+
+   <!--封签卸车 -->
+  <ion-tab title="投诉录入" icon-off="icon-scanUnloading" icon-on="icon-scanUnloading-active" href="#/complaintsQuery">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+
+  <!-- 禁运品查询 -->
+  <ion-tab title="禁运品查询" icon-off="icon-contrabandQuery" icon-on="icon-contrabandQuery-active" href="#/contrabandQuery">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+</ion-tabs>

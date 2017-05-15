@@ -1,0 +1,30 @@
+<ion-view>
+  <ion-content class="login_bg_img">
+    <div class="login">
+      <div class="login_logo">
+        <img src="../img/login/login_title.png" alt=""/>
+        <p>掌上佳吉运营支撑系统</p>
+      </div>
+      <div class="login_form">
+        <form>
+          <div class="form_group">
+            <p class="form_item">
+              <i class="login_username"></i>
+              <input type="text" class="login_input" ng-model="user.name" placeholder="请输入职员代码" value=""/>
+            </p>
+          </div>
+          <div class="form_group">
+            <p class="form_item">
+              <i class="login_password"></i>
+              <input type="password" class="login_input" ng-model="user.password"  placeholder="请输入登录密码" value=""/>
+            </p>
+          </div>
+          <div class="login_btn_pos">
+            <button type="button" class="button-l" ng-click="goLogin(user)">登录</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

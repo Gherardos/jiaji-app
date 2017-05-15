@@ -1,0 +1,53 @@
+/*   home.css    */
+.left_menu{display: flex;justify-content: center;align-items: center;padding:0px !important;}
+.home_personCenter{background-image: url(../../../../img/home/personCenter.png);padding: 0 20px;width: 25px;height: 25px;}
+.home_title_logo{background-image: url(../../../../img/home/home_title_logo.png);height: 100%;display: block;background-repeat: no-repeat;  background-position: center;  background-size: 50%;}
+.home_tips{background-color: #fff;}
+.home_tips p{  color: #2db0e9;padding: 5px;}
+.home-navigation{}
+.home-navigation .nav-content{padding: 13px;}
+.nav-list{-webkit-flex-flow: row wrap;flex-flow: row wrap;-webkit-box-orient:horizontal;box-orient:horizontal;-webkit-box-direction:normal;box-direction:normal;-webkit-box-lines:multiple;box-lines:multiple;background-color: #fff;}
+.home-navigation .nav-list{-webkit-flex-flow: row wrap;flex-flow: row wrap;-webkit-box-orient:horizontal;box-orient:horizontal;-webkit-box-direction:normal;box-direction:normal;-webkit-box-lines:multiple;box-lines:multiple;background-color: #fff;}
+.home-navigation .nav-list .col{height: 110px;padding: 2px;overflow: hidden;}
+.home-navigation .nav-list a{ height: 100%; display: -webkit-box;display: -webkit-flex;display: flex;-webkit-align-items: center;align-items: center;-webkit-box-align:center;box-align:center; -webkit-justify-content: center;justify-content: center;-webkit-box-pack:center;box-pack:center;-webkit-flex-flow: column nowrap;flex-flow: column nowrap;-webkit-box-orient:vertical;box-orient:vertical;-webkit-box-direction:normal;box-direction:normal;-webkit-box-lines:single;box-lines:single;font-size: 14px;text-decoration: none;color: #000000;}
+.home-navigation .nav-list a i{display: block;height: 30px;width:30px;background-repeat: no-repeat;background-position: center;background-size: 100%;}
+
+.home-navigation .nav-list .consign a{}
+.home-navigation .nav-list .consign .nav-consign{background-image: url(../../../../img/home/consignCheck.png);}
+.home-navigation .nav-list .signScan a{}
+.home-navigation .nav-list .signScan .nav-signScan{background-image: url(../../../../img/home/signbillScan.png);}
+.home-navigation .nav-list .warehousingScan a{}
+.home-navigation .nav-list .warehousingScan .nav-warehousingScan{background-image: url(../../../../img/home/warehousingScan.png);}
+.home-navigation .nav-list .deliverySign a{}
+.home-navigation .nav-list .deliverySign .nav-deliverySign{background-image: url(../../../../img/home/deliverySign.png);}
+.home-navigation .nav-list .goodsQuery a{}
+.home-navigation .nav-list .goodsQuery .nav-goodsQuery{background-image: url(../../../../img/home/goodsQuery.png);}
+.home-navigation .nav-list .fareQuery a{}
+.home-navigation .nav-list .fareQuery .nav-fareQuery{background-image: url(../../../../img/home/fareQuery.png);}
+.home-navigation .nav-list .websiteQuery a{}
+.home-navigation .nav-list .websiteQuery .nav-websiteQuery{background-image: url(../../../../img/home/websiteQuery.png);}
+.home-navigation .nav-list .contrabandQuery a{}
+.home-navigation .nav-list .contrabandQuery .nav-contrabandQuery{background-image: url(../../../../img/home/contrabandQuery.png);}
+.home-navigation .nav-list .messages a{}
+.home-navigation .nav-list .messages .nav-messages{background-image: url(../../../../img/home/goodsQuery.png);}
+.home-navigation .nav-list .complaintEntry a{}
+.home-navigation .nav-list .complaintEntry .nav-complaintEntry{background-image: url(../../../../img/home/complaintEntry.png);}
+.home-navigation .nav-list .hifReport a{}
+.home-navigation .nav-list .hifReport .nav-hifReport{background-image: url(../../../../img/home/hifiReport.png);}
+.home-navigation .nav-list .sealSacns a{}
+.home-navigation .nav-list .sealSacns .nav-sealSacns{background-image: url(../../../../img/home/sealScans.png);}
+.home-navigation .nav-list .keepScan a{}
+.home-navigation .nav-list .keepScan .nav-keepScan{background-image: url(../../../../img/home/keepSacn.png);}
+.home-navigation .nav-list .scanLoading a{}
+.home-navigation .nav-list .scanLoading .nav-scanLoading{background-image: url(../../../../img/home/scanLoading.png);}
+.home-navigation .nav-list .scanUnloading a{}
+.home-navigation .nav-list .scanUnloading .nav-scanUnloading{background-image: url(../../../../img/home/scanUnloading.png);}
+.home-navigation .nav-list .OASys a{}
+.home-navigation .nav-list .OASys .nav-OASys{background-image: url(../../../../img/home/OASys.png);}
+
+.home-navigation .nav-list .operationAnalysis a{}
+.home-navigation .nav-list .operationAnalysis .nav-operationAnalysis{background-image: url(../../../../img/home/operationAnalysis.png);}
+.home-navigation .nav-list .intoManage a{}
+.home-navigation .nav-list .intoManage .nav-intoManage{background-image: url(../../../../img/home/intoManage.png);}
+.home-navigation .nav-list .deliveryReceipt a{}
+.home-navigation .nav-list .deliveryReceipt .nav-deliveryReceipt{background-image: url(../../../../img/home/deliveryReceipt.png);}

@@ -1,0 +1,85 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>指标管理</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+    <ion-tabs class="tabs-positive tabs-striped tabs-top ">
+      <ion-tab title="收入指标">
+        <ion-view>
+          <ion-content class="targetManage_content">
+            <div class="bg-f b-td m-t-10">
+              <label class="item item-input item-select select_list b-d-i">
+                <div class="input-label">查询机构</div>
+                <select id="org">
+                  <option selected>请选择查询机构</option>
+                  <option>Blue</option>
+                  <option>Green</option>
+                  <option>Red</option>
+                </select>
+              </label>
+
+              <label class="item item-input item-select select_list b-d-i">
+                <div class="input-label">指标类型</div>
+                <select id="type">
+                  <option selected>请选择指标类型</option>
+                  <option>Blue</option>
+                  <option>Green</option>
+                  <option>Red</option>
+                </select>
+              </label>
+
+              <label class="item item-input item-select select_list">
+                <div class="input-label">年份</div>
+                <select id="year">
+                  <option selected>请选择年份</option>
+                  <option>2011</option>
+                  <option>2012</option>
+                  <option>2015</option>
+                </select>
+              </label>
+            </div>
+            <div class="p-td-35 t-c">
+              <button type="button" class="button-s" ng-click="goQueryInfo(user)">查询</button>
+            </div>
+
+            <div ng-if="trendData" class="targetManage_trend row nav-list">
+                <div ng-repeat="data in trendData" class="col col-33 targetManage_trendItem">
+                  <div class="item_top">
+                    <p class="month_font">{{data.month}}</p>
+                    <p class="balance_font b-a">{{data.expect}}万</p>
+                  </div>
+                  <div class="item-bot">
+                    <p ng-class="{'up_font':data.actual > data.expect,'down_font':data.actual < data.expect,'balance_font':data.actual == data.expect}" class="f20">{{data.actual}}<span class="f14">万</span></p>
+                    <i ng-class="{'trendUp':data.actual > data.expect,'trendDown':data.actual < data.expect,'':data.actual == data.expect}" class="icon p-l-5 p-r-5"></i>
+                  </div>
+                </div>
+            </div>
+
+          </ion-content>
+        </ion-view>
+      </ion-tab>
+      <ion-tab title="吨价指标">
+        <ion-view>
+          <ion-content class="targetManage_content">
+
+          </ion-content>
+        </ion-view>
+      </ion-tab>
+
+      <ion-tab title="产品指标">
+        <ion-view>
+          <ion-content class="targetManage_content">
+
+          </ion-content>
+        </ion-view>
+      </ion-tab>
+    </ion-tabs>
+  </ion-content>
+</ion-view>
+
+

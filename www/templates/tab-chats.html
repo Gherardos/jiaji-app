@@ -1,0 +1,72 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>运价查询</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content has-bouncing="true">
+     <div>
+        <div style="background-color: #fff;">
+          <form>
+            <div class="ui-form-item ui-form-item-link b-d">
+              <label>运输产品</label>
+              <input type="text" value="" placeholder="请选择运输产品" readonly="readonly" ng-click="selectTransportProduct()">
+            </div>
+            <div class="select_type" ng-if="showTransprotProduct">
+              <ul>
+                <li ng-repeat="productType in transprotProduct">
+                  <p class="p-td-5">{{productType.title}}</p>
+                </li>
+              </ul>
+            </div>
+            <div class="ui-form-item ui-form-item-link b-d">
+              <label>起点机构</label>
+              <input type="text" value="" placeholder="请选择起点机构" readonly="readonly">
+            </div>
+            <div class="ui-form-item ui-form-item-link b-d">
+              <label>终点机构</label>
+              <input type="text" value="" placeholder="请选择终点机构" readonly="readonly">
+            </div>
+            <div class="ui-form-item ui-form-item-link b-d">
+              <label>货物类型</label>
+              <input type="text" value="" placeholder="请选择货物类型" readonly="readonly">
+            </div>
+            <div class="ui-form-item b-d">
+              <label>重量</label>
+              <input type="text" value="" placeholder="请输入重量">
+              <p style="padding: 0 15px;">kg</p>
+            </div>
+            <div class="ui-form-item">
+              <label>体积</label>
+              <input type="text" value="" placeholder="请输入体积">
+              <p style="padding: 0 15px;">m³</p>
+            </div>
+          </form>
+        </div>
+       <div class="p-td-35 t-c">
+         <button type="button" class="button-s" ng-click="goQueryInfo()">查询</button>
+       </div>
+       <div ng-if="isShowAllProductInfo && tipDate.length >0" class="fareQuery_info">
+         <ul class="b-a m-d-15">
+           <li ng-repeat="tip in tipDate" ng-class="$last?'':'fareQuery_b_b'">
+              <p>{{tip.title}}</p>
+              <p>{{tip.date}}</p>
+              <p>{{tip.money}}</p>
+           </li>
+         </ul>
+
+         <div class="footer" ng-if="isShowAllProductInfo && tipDate.length >0">
+           <p>提示：价格并非实际价格，改价格仅供参考</p>
+           <p>详情咨询：400-820-556</p>
+         </div>
+       </div>
+     </div>
+
+
+  </ion-content>
+</ion-view>
+
+

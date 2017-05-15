@@ -1,0 +1,133 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>投诉录入</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+
+  <ion-content>
+      <div class="bg-f">
+        <form>
+
+          <label class="item item-input item-select select_list b-d-i">
+            <div class="input-label">投诉类别</div>
+            <select>
+              <option selected>请选择投诉类别</option>
+              <option>全部</option>
+              <option>一部分</option>
+              <option>二部分</option>
+            </select>
+          </label>
+
+          <label class="item item-input item-select select_list b-d-i">
+            <div class="input-label">投诉类型</div>
+            <select>
+              <option selected>请选择投诉类型</option>
+              <option>全部</option>
+              <option>一部分</option>
+              <option>二部分</option>
+            </select>
+          </label>
+
+
+          <!--<form name="timepickerForm" class="form-inline" role="form">
+
+            &lt;!&ndash; Basic example &ndash;&gt;
+            <div class="form-group" ng-class="{'has-error': timepickerForm.time.$invalid}">
+              <label class="control-label"><i class="fa fa-clock-o"></i> Time <small>(as date)</small></label>
+              <input type="text" class="form-control" size="8" ng-model="time" name="time" bs-timepicker>
+            </div>
+
+            &lt;!&ndash; Custom example &ndash;&gt;
+            <div class="form-group" ng-class="{'has-error': timepickerForm.time2.$invalid}">
+              <label class="control-label"><i class="fa fa-clock-o"></i> Time <small>(as number)</small></label>
+              <input type="text" class="form-control" size="8" ng-model="selectedTimeAsNumber" data-time-format="HH:mm:ss" data-time-type="number" data-min-time="10:00:00" data-max-time="13:30:00" data-autoclose="1" name="time2" bs-timepicker>
+            </div>
+            <hr>
+
+            &lt;!&ndash; Time picker with arrows example &ndash;&gt;
+            <div class="form-group">
+              <label class="control-label"><i class="fa fa-clock-o"></i> Time picker with arrows</label><br>
+              <div class="form-group">
+                <input type="text" class="form-control" size="8" ng-model="time" name="time" bs-timepicker data-time-format="HH:mm" data-length="1" data-minute-step="1" data-arrow-behavior="picker">
+              </div>
+            </div>
+            <hr>
+
+            &lt;!&ndash; Datetime example &ndash;&gt;
+            <div class="form-group">
+              <label class="control-label"><i class="fa fa-calendar"></i> Datetime picker</label><br>
+              <div class="form-group">
+                <input type="text" size="10" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Date" bs-datepicker>
+              </div>
+              <div class="form-group">
+                <input type="text" size="8" class="form-control" ng-model="sharedDate" data-time-format="h:mm:ss a" data-autoclose="1" placeholder="Time" bs-timepicker>
+              </div>
+            </div>
+
+          </form>-->
+
+          <div class="ui-form-item ui-form-item-link b-d">
+            <label>投诉日期</label>
+            <input ng-model="user.userSelectTime" placeholder="{{userSelectDate}}" ng-click="openDatePicker()" readonly>
+          </div>
+
+          <div class="ui-form-item ui-form-item-link b-d">
+            <label>投诉时间</label>
+            <input ng-model="user.userSelectTime" placeholder="{{userSelectTime}}" ng-click="openTimePicker()" readonly>
+          </div>
+
+          <div class="ui-form-item b-d">
+            <label>投诉单号</label>
+            <input type="text" value="" placeholder="">
+          </div>
+          <div class="ui-form-item b-d">
+            <label>运单号</label>
+            <input type="text" value="" placeholder="">
+          </div>
+          <div class="ui-form-item b-d">
+            <label>车牌号</label>
+            <input type="text" value="" placeholder="">
+          </div>
+          <div class="ui-form-item b-d">
+            <label>投诉公司</label>
+            <input type="text" value="" placeholder="">
+          </div>
+          <div class="ui-form-item b-d">
+            <label>投诉办事处</label>
+            <input type="text" value="" placeholder="">
+          </div>
+          <div class="ui-form-item b-d">
+            <label>被投诉人</label>
+            <input type="text" value="" placeholder="">
+          </div>
+          <div class="ui-form-item">
+            <label>手机号码</label>
+            <input type="text" value="" placeholder="">
+          </div>
+        </form>
+      </div>
+
+      <div class="p-td-10 p-d-15">投诉反馈</div>
+        <div class="complaints_Reason b-td">
+          <textarea class="weui_textarea" placeholder="请输入投诉原因" rows="4"></textarea>
+          <div class="font_num_tip">
+            <span>0</span><span>/200</span>
+          </div>
+          <div class="weui_cell b-td">
+            <ul class="weui_upload_files">
+            </ul>
+            <div class="weui_upload">
+              <input class="weui_upload_input" type="file" accept="image/*" multiple>
+            </div>
+          </div>
+      </div>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-assertive">
+    <button type="button" class="button-b">提交</button>
+  </ion-footer-bar>
+</ion-view>
+

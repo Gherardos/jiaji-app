@@ -1,0 +1,2081 @@
+@charset "utf-8";
+html{
+  font-size: 14px;
+}
+p{margin: 0;padding: 0;}
+.pane,.view{background-color: #f1f1f1;}
+.goBack{background-image: url(../img/home/back.png) ;background-size: 100%;}
+.closeModalDialog{background-image: url(../img/publicIcon/closeModalDialog.png) ;background-size: 100%;}
+.tab-item .icon{height: 25px; width: 25px; background-repeat: no-repeat;background-position: center;}
+.tab-item .tab-consign{background-image: url(../img/home/tabUnselectConsign.png);background-size: 100%;}
+.tab-item .tab-consign-active{background-image: url(../img/home/tabSelectConsign.png);background-size: 100%;}
+.tab-item .icon-fareQuery{background-image: url(../img/home/tabUnselectFareQuery.png);background-size: 100%;}
+.tab-item .icon-fareQuery-active{background-image: url(../img/home/tabSelectFareQuery.png);background-size: 100%;}
+.tab-item .icon-sealScans{background-image: url(../img/home/tabUnselectedSealScans.png);background-size: 100%;}
+.tab-item .icon-sealScans-active{background-image: url(../img/home/tabSelectSealScans.png);background-size: 100%;}
+.tab-item .icon-scanUnloading{background-image: url(../img/home/tabUnselectedScanUnloading.png);background-size: 100%;}
+.tab-item .icon-scanUnloading-active{background-image: url(../img/home/tabSelectScanUnloading.png);background-size: 100%;}
+.tab-item .icon-contrabandQuery{background-image: url(../img/home/tabUnselectContrabandQuery.png);background-size: 100%;}
+.tab-item .icon-contrabandQuery-active{background-image: url(../img/home/tabSelectContrabandQuery.png);background-size: 100%;}
+
+ion-tabs.tabs-color-active-stable .tab-item.activated, ion-tabs.tabs-color-active-stable .tab-item.active, ion-tabs.tabs-color-active-stable .tab-item.tab-item-active{color: #db4041;background-color: #e1dfe4;}
+.tabs{background: #fff;}
+.tabs:before{content: '';display: block;height: 1px;width: 100%;background-color: #dfdfe3;position: absolute;left: 0;top: 0;}
+ion-tabs.tabs-color-active-stable .tab-item{color: #666;}
+@media not all, (-webkit-min-device-pixel-ratio: 1.5), not all, (min-resolution: 144dpi), (min-resolution: 1.5dppx){.tabs {padding-top: 0; }}
+.slider .slider-slides .slider-slide img{width: 100%;display: block;}
+
+.bar .button.back-button, .bar button.back-button{
+  /*display: block !important;*/
+  display: flex;
+  justify-content: center;
+  margin-right: 0;
+  padding: 0;
+  white-space: nowrap;
+  font-weight: 400;
+  background-color: transparent;
+  color: #fff;
+  width: 15%;
+}
+.scroll-refresher .ionic-refresher-content .text-refreshing, .scroll-refresher .ionic-refresher-content .text-pulling{
+  line-height: 0px;
+  color:#9a9a9a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.scroll-refresher .ionic-refresher-content{
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  color: #666666;
+  text-align: center;
+  font-size: 30px;
+  height: 44px;
+  top: 0px;
+}
+.scroll-refresher.active.refreshing .icon-pulling, .scroll-refresher.active.refreshing .text-pulling{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+}
+.scroll-refresher{
+  position: absolute;
+  top: -44px;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  margin: auto;
+  height: 60px;
+}
+.huatek-refresh-icon{
+  display: block;
+  /*height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-position: center;*!/*/
+  background: url(../img/publicIcon/loading.gif) 40% no-repeat;
+  height: 44px;
+  background-size: contain;
+
+}
+
+/* 修改ionic的class属性 */
+.bar .title{
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  overflow: inherit;
+  margin: 0 10px;
+  min-width: 30px;
+  height: 43px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 44px;
+}
+.bar .title + .button:last-child, .bar > .button + .button:last-child, .bar > .button.pull-right, .bar .buttons.pull-right, .bar .title + .buttons{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.bar .title + .button:last-child, .bar > .button + .button:last-child, .bar > .button.pull-right, .bar .buttons.pull-right, .bar .title + .buttons p{
+  color:#fff;
+}
+.row{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  width: 100%;
+}
+.icon_back{
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  display: flex;
+  align-self: center;
+  margin: 0 auto;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader).item-input-inset .item-input-wrapper{
+  margin-top: 0 !important;
+}
+input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly]{
+  cursor: none;
+  background-color: transparent;
+}
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated{
+  color:#d61e14;
+}
+.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item{
+  font-size: 10px;
+  line-height: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bar{
+  padding:0;
+}
+.button.active,.button.activated{
+  border-color: transparent;
+  background-color: transparent;
+}
+.platform-android .bar .title{
+  font-size: 14px;
+  line-height: 44px;
+}
+.bar .title.title-left{
+  text-align: center;
+}
+/*********************  ng-cordova *************************/
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader){
+  height:45px;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > *{
+  margin-top: 0;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader{
+  top: 45px;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .tabs-top > .tabs, .platform-ios.platform-cordova:not(.fullscreen) .tabs.tabs-top{
+  top:0;
+}
+/********************  timepicker ************************/
+.popup-container .popup{
+  width: 80% !important;
+  max-width: 80%;
+  max-height: 90%;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.ionic_timepicker_popup .padding_10px{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/*  封装起来的css */
+.b-t{border-top: 1px solid #e5e5e5;}
+.b-l{border-left: 1px solid #e5e5e5;}
+.b-r{border-right: 1px solid #e5e5e5;}
+.b-d{border-bottom: 1px solid #e5e5e5;}
+.b-d-i{border-bottom: 1px solid #e5e5e5 !important;}
+.b-td{border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;}
+.b-a{border:1px solid #e5e5e5;}
+.b-a-d{border:1px dashed #e5e5e5;}
+
+.p-l-5{padding-left: 5px;}
+.p-r-5{padding-right: 5px;}
+.p-t-5{padding-top: 5px;}
+.p-b-5{padding-bottom: 5px;}
+.p-td-5{padding-top: 5px;padding-bottom: 5px;}
+.p-l-10{padding-left: 10px;}
+.p-r-10{padding-right: 10px;}
+.p-t-10{padding-top: 10px;}
+.p-b-10{padding-bottom: 10px;}
+.p-d-10{padding-left: 10px;padding-right: 10px;}
+.p-l-15{padding-left: 15px;}
+.p-r-15{padding-right: 15px;}
+.p-t-15{padding-top: 15px;}
+.p-b-15{padding-bottom: 15px;}
+.p-td-15{padding-top: 15px;padding-bottom: 15px;}
+.p-d-15{padding-left: 15px;padding-right: 15px;}
+.p-td-10{padding-top: 10px;padding-bottom: 10px;}
+.p-td-35{padding-top: 35px;padding-bottom: 35px;}
+
+.m-l-5{margin-left: 5px;}
+.m-r-5{margin-right: 5px;}
+.m-t-5{margin-top: 5px;}
+.m-b-5{margin-bottom: 5px;}
+.m-td-5{margin-top: 5px;margin-bottom: 5px;}
+.m-l-10{margin-left: 10px;}
+.m-r-10{margin-right: 10px;}
+.m-t-10{margin-top: 10px;}
+.m-b-10{margin-bottom: 10px;}
+.m-l-15{margin-left: 15px;}
+.m-r-15{margin-right: 15px;}
+.m-t-15{margin-top: 15px;}
+.m-b-15{margin-bottom: 15px;}
+.m-td-10{margin-top: 10px;margin-bottom: 10px;}
+.m-d-10{margin-left: 10px;margin-right: 10px;}
+.m-td-15{margin-top: 15px;margin-bottom: 15px;}
+.m-d-15{margin-left: 15px;margin-right: 15px;}
+.jiaji-color{background-color: #d61e14;}
+
+.f12{font-size: 12px;}
+/*.f14{font-size: 14px;}*/
+.f16{font-size: 16px;}
+.f20{font-size: 20px;}
+.text-ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.t-c{text-align: center;  }
+.f-col-9{color:#999;  }
+.bg-f{background-color: #fff;}
+.dis-f-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.button-l{
+  width: 100%;
+  height: 40px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  border: none;
+  background-color: #ffc209;
+  color: #551c00;
+}
+.button-s{
+  width: 80%;
+  height: 40px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  border: none;
+  background-color: #d61e14;
+  color:#fff;
+}
+.button-b{
+  width: 100%;
+  height: 45px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  border: none;
+  background-color: #d61e14;
+  color:#fff;
+}
+.button-Two-way{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.button-previous-bg{
+  background-color: #9a9a9a;
+}
+.title-search{
+  background-image:url(../img/publicIcon/titleSearch.png);
+}
+.search-input{
+  background-image:url(../img/publicIcon/searchInput.png);
+}
+.title-search-icon{
+  padding: 0;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+}
+.close-modal-icon{
+  width: 15%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-input-icon{
+  padding: 0 10px;
+  /*height: 100%;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 320px) and (max-width: 374px) {
+  html{
+    font-size: 12px;
+  }
+  body, .ionic-body{
+    font-size: 12px;
+  }
+  textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"]{
+    font-size: 12px;
+  }
+  label, input, button, select, textarea{
+    font-size: 12px;
+  }
+  .input-label{
+    font-size: 12px !important;
+  }
+  .item-select select{
+    font-size: 12px;
+  }
+  .item-note{
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .home_title_logo{
+    background-size: 30% !important;
+  }
+}
+
+/*   home.css    */
+.left_menu{display: flex;justify-content: center;align-items: center;padding:0px !important;}
+.home_personCenter{background-image: url(../img/home/personCenter.png);padding: 0 20px;width: 25px;height: 25px;}
+.home_title_logo{background-image: url(../img/home/home_title_logo.png);height: 100%;display: block;background-repeat: no-repeat;  background-position: center;  background-size: 50%;}
+.home_tips{background-color: #fff;}
+.home_tips p{  color: #2db0e9;padding: 5px;}
+.home-navigation{}
+.home-navigation .nav-content{padding: 13px;}
+.nav-list{-webkit-flex-flow: row wrap;flex-flow: row wrap;-webkit-box-orient:horizontal;box-orient:horizontal;-webkit-box-direction:normal;box-direction:normal;-webkit-box-lines:multiple;box-lines:multiple;background-color: #fff;}
+.home-navigation .nav-list{-webkit-flex-flow: row wrap;flex-flow: row wrap;-webkit-box-orient:horizontal;box-orient:horizontal;-webkit-box-direction:normal;box-direction:normal;-webkit-box-lines:multiple;box-lines:multiple;background-color: #fff;}
+.home-navigation .nav-list .col{height: 110px;padding: 2px;overflow: hidden;}
+.home-navigation .nav-list a{ height: 100%; display: -webkit-box;display: -webkit-flex;display: flex;-webkit-align-items: center;align-items: center;-webkit-box-align:center;box-align:center; -webkit-justify-content: center;justify-content: center;-webkit-box-pack:center;box-pack:center;-webkit-flex-flow: column nowrap;flex-flow: column nowrap;-webkit-box-orient:vertical;box-orient:vertical;-webkit-box-direction:normal;box-direction:normal;-webkit-box-lines:single;box-lines:single;text-decoration: none;color: #000000;}
+.home-navigation .nav-list a i{display: block;height: 30px;width:30px;background-repeat: no-repeat;background-position: center;background-size: 100%;}
+
+.home-navigation .nav-list .consign a{}
+.home-navigation .nav-list .consign .nav-consign{background-image: url(../img/home/consignCheck.png);}
+.home-navigation .nav-list .signScan a{}
+.home-navigation .nav-list .signScan .nav-signScan{background-image: url(../img/home/signbillScan.png);}
+.home-navigation .nav-list .warehousingScan a{}
+.home-navigation .nav-list .warehousingScan .nav-warehousingScan{background-image: url(../img/home/warehousingScan.png);}
+.home-navigation .nav-list .deliverySign a{}
+.home-navigation .nav-list .deliverySign .nav-deliverySign{background-image: url(../img/home/deliverySign.png);}
+.home-navigation .nav-list .goodsQuery a{}
+.home-navigation .nav-list .goodsQuery .nav-goodsQuery{background-image: url(../img/home/goodsQuery.png);}
+.home-navigation .nav-list .fareQuery a{}
+.home-navigation .nav-list .fareQuery .nav-fareQuery{background-image: url(../img/home/fareQuery.png);}
+.home-navigation .nav-list .websiteQuery a{}
+.home-navigation .nav-list .websiteQuery .nav-websiteQuery{background-image: url(../img/home/websiteQuery.png);}
+.home-navigation .nav-list .contrabandQuery a{}
+.home-navigation .nav-list .contrabandQuery .nav-contrabandQuery{background-image: url(../img/home/contrabandQuery.png);}
+.home-navigation .nav-list .messages a{}
+.home-navigation .nav-list .messages .nav-messages{background-image: url(../img/home/goodsQuery.png);}
+.home-navigation .nav-list .complaintEntry a{}
+.home-navigation .nav-list .complaintEntry .nav-complaintEntry{background-image: url(../img/home/complaintEntry.png);}
+.home-navigation .nav-list .hifReport a{}
+.home-navigation .nav-list .hifReport .nav-hifReport{background-image: url(../img/home/hifiReport.png);}
+.home-navigation .nav-list .sealSacns a{}
+.home-navigation .nav-list .sealSacns .nav-sealSacns{background-image: url(../img/home/sealScans.png);}
+.home-navigation .nav-list .keepScan a{}
+.home-navigation .nav-list .keepScan .nav-keepScan{background-image: url(../img/home/keepSacn.png);}
+.home-navigation .nav-list .scanLoading a{}
+.home-navigation .nav-list .scanLoading .nav-scanLoading{background-image: url(../img/home/scanLoading.png);}
+.home-navigation .nav-list .scanUnloading a{}
+.home-navigation .nav-list .scanUnloading .nav-scanUnloading{background-image: url(../img/home/scanUnloading.png);}
+.home-navigation .nav-list .OASys a{}
+.home-navigation .nav-list .OASys .nav-OASys{background-image: url(../img/home/OASys.png);}
+
+.home-navigation .nav-list .operationAnalysis a{}
+.home-navigation .nav-list .operationAnalysis .nav-operationAnalysis{background-image: url(../img/home/operationAnalysis.png);}
+.home-navigation .nav-list .intoManage a{}
+.home-navigation .nav-list .intoManage .nav-intoManage{background-image: url(../img/home/intoManage.png);}
+.home-navigation .nav-list .deliveryReceipt a{}
+.home-navigation .nav-list .deliveryReceipt .nav-deliveryReceipt{background-image: url(../img/home/deliveryReceipt.png);}
+
+
+.bar-huatek,
+.bar-huatek-search{background: #d61e14;}
+.bar-huatek-modal{background: #f1f1f1;}
+.bar-huatek .button-icon{color: #fff;}
+.bar .button.button-icon .icon:before,
+.bar .button.button-icon.icon-left:before,
+.bar .button.button-icon.icon-right:before,
+.bar .button.button-icon:before,
+.bar button.button-icon .icon:before,
+.bar button.button-icon.icon-left:before,
+.bar button.button-icon.icon-right:before,
+.bar button.button-icon:before{font-size: 22px;}
+.bar-huatek .button-bar{border: #fff solid 1px;border-radius: 5px;margin-top: 4px;}
+.bar-huatek .button-bar .button{background-color: transparent;color: #fff;}
+.bar-huatek .button-bar .button.active{background-color: #fff;color: #e83838;}
+.bar-huatek .button-bar .button:not(.active):active{background-color: rgba(255,255,255,.5);}
+.bar.bar-huatek .title{ color: #fff;  transition-duration: 0ms;transform: translate3d(0px, 0px, 0px);width: 60%;margin: 0 auto;left:0 !important;right: 0 !important;height: 100%;}
+.bar.bar-huatek-search .title{  color: #fff;  transition-duration: 0ms;transform: translate3d(0px, 0px, 0px);width: 90%;margin: 0 auto;left:0 !important;right: 0 !important;height: 100%;}
+.tabs-huatek{padding: 0 20px;}
+.tabs-huatek .has-subheader{top: 88px;}
+.tabs-huatek .tab-item{margin: 0 20px;}
+.tabs-huatek .tab-item.activated, .tabs-huatek .tab-item.active, .tabs-huatek .tab-item.tab-item-active{border-bottom: #e53737 solid 3px;color: #e53737;}
+.order-item{padding-left: 55px;background: none;border: none 0;}
+.order-item .row{padding: 0;}
+.order-item .row .col{padding: 0;}
+.item.order-item:nth-of-type(even){background-color: #fff;}
+.order-item p{color: #333;margin: 0;}
+.order-item .icon-order{position: absolute;left: 15px;top: 27px;}
+.order-item .icon-order span{ display: inline-block; width: 30px;height: 30px;border-radius: 50%;background-color: #3bb4b5;text-align: center;line-height: 30px;}
+.order-item .icon-order i{ display: inline-block; width: 15px;height: 16px;background: url(../img/icon-13.png) no-repeat center;-webkit-background-size: 100%;background-size: 100%;margin-top: 6px;}
+.order-item .order-line{margin-bottom: 10px;}
+.order-item .order-line i{display: inline-block;width: 20px;height: 4px;background: url(../img/icon-14.png) no-repeat;-webkit-background-size: 100%;background-size: 100%;margin: 0 5px;vertical-align: middle;}
+.order-item .order-line span{vertical-align: middle;}
+.order-item.non-payment .icon-order span{background-color: #ff8400;}
+.order-item.non-payment .order-info span{color: #ff8400;}
+.huatek-btn{background-color: #ff8400;color: #fff;padding: 0 10px;min-height: 25px;line-height: 25px;}
+.huatek-btn.activated, .huatek-btn.active{color: rgba(51,51,51,.8);}
+.huatek-btn:hover{color:#fff; }
+.order-item .order-info{position: relative;}
+.order-item .order-info span{font-size: 12px;color:#3bb4b5;margin-left: 10px; }
+.order-item .order-info .payment-btn{position: absolute;bottom:-5px;right: 0;}
+.date-filter{height: 100%;padding: 0 15px;color: #999;}
+.date-filter > .row{padding: 0;-webkit-align-items: center;align-items: center;-webkit-box-align:center;box-align:center;}
+.date-filter > .row > .col{padding: 0;}
+.date-filter > .row > .col .button{width: 100%;border: #c4c4cd solid 1px;background: #f7f7f7;background:-webkit-linear-gradient(top,#f7f7f7,#dddde4);box-shadow: inset 0 0 2px rgba(255,255,255,.5);}
+.date-filter > .row > .col.line{margin-top: -7px;}
+.date-filter > .row > .col.line span{display: inline-block;width: 15px;height: 1px;background-color: #999;}
+/*android*/
+.platform-android .tabs-striped .tabs{padding-top: 1px;}
+.platform-android .tabs-striped .tab-item{
+  color: #505050;
+  border-color: transparent !important;
+  border-bottom: 2px solid transparent;
+}
+.platform-android .tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated{
+  border: none 0;margin-top: 0;
+  color: #505050;
+  border-color: #d61e14 !important;
+  border-bottom: 2px solid #d61e14;
+}
+
+
+/******************************  datepicker **************************/
+.popup-container .popup{
+  width: 70%;
+  max-width: 80%;
+  max-height: 90%;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.ionic_datepicker_popup .popup-body .month_select, .ionic_datepicker_popup .popup-body .year_select{
+  border: none;
+  border-bottom: 1px solid #009688;
+  padding: 0;
+  margin-left: 5px;
+}
+
+/*search*/
+.searchBar {
+  color: #fff;
+  margin: 0 !important;
+  padding: 0;
+}
+.searchBar .icon {
+  font-size: 27px;
+  line-height: 1.2;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+.searchBar .searchTxt {
+  border-bottom: 1px solid #fff;
+  left: 55px;
+  width: calc(100% - 113px);
+  position: fixed;
+  height: calc(100% - 10px);
+}
+.searchBar.numicons2 .searchTxt {
+  width: calc(100% - 135px);
+}
+.searchBar .searchTxt > .bgdiv {
+  background-color: #aaa;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.3;
+}
+.searchBar .searchTxt > .bgtxt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.searchBar .searchTxt input {
+  background-color: inherit;
+  color: #fff;
+  padding-left: 5px;
+  padding-right:5px;
+}
+
+
+
+
+/* login */
+.login_bg_img{
+  background-image:url(../img/login/login_bg_pic.png);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  /*background-size: contain;*/
+  background-size: cover;
+  vertical-align: middle;
+}
+.login{
+  height: 100%;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+ /* background-color: #d61e14;*/
+}
+.login .login_logo{
+  width: 70%;
+  margin: 0 auto;
+  padding: 25% 0;
+  text-align: center;
+}
+.login .login_logo img{
+  width: 70%;
+}
+.login .login_logo p{
+  text-align: center;
+  font-size: 22px;
+  color:#fff;
+  padding-top: 20px;
+}
+.login .login_form{
+  /*width: 80%;*/
+  width: 320px;
+  margin: 0 auto;
+}
+.login .login_form .form_group{
+  margin-bottom: 0.5rem;
+}
+.login .login_form .form_group > .form_item
+{
+  background-color: rgba(255,255,255,.3);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.login .login_form .form_group > .form_item:only-of-type{
+  border-radius: 4px;
+}
+.login .login_form .form_group > .form_item + .form_item{
+  margin-top: 0.05rem;
+}
+.login .login_form .form_group > .form_item:first-of-type{
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.login .login_form .form_group > .form_item:last-of-type{
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.login .login_form .form_item{
+  /*position: absolute;
+    left: 0.4rem;
+    top: 0.6rem;*/
+}
+.login .login_form .form_item > i{
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  padding: 0px 20px;
+}
+.login .login_form .form_item > i.login_username{
+  background-image:url(../img/login/login_name.png);
+}
+.login .login_form .form_item > i.login_password{
+  background-image:url(../img/login/login_password.png);
+}
+
+.login_input{
+  height: 40px !important;
+  padding: 0 !important;
+  width: 100%;
+  border: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff !important;
+  background-color: transparent;
+  outline: none;
+}
+.login .login_form .login_btn_pos{
+  text-align: center;
+  padding-top:0.5rem
+}
+.popup-head{
+  padding: 10px;
+  border-bottom: none;
+  text-align: center;
+  background-color: rgba(0,0,0,.6);
+}
+.popup-head h3{
+  color:#fff;
+}
+
+/***********************    办理托运 *************/
+.consign_info{
+  display: flex;
+}
+.consign_info p{
+  display: flex;
+  width: 50%;
+  max-width: 50%;
+  padding: 5px 5px 5px 0 !important;
+}
+.handleConsign_right{
+  display: flex;
+  flex-direction: row;
+  width: 120px;
+  float: right;
+}
+.consign_icon_item{
+  display: flex;
+  align-items: center;
+}
+.handleConsign_icon{
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  vertical-align: middle;
+}
+.has_abolished{
+  background-color: #c3c2c2 !important;
+}
+.printer{
+  background-image:url(../img/handleConsign/printer.png);
+}
+.delete{
+  background-image:url(../img/handleConsign/deleteIcon.png);
+}
+.Invalid{
+  background-image:url(../img/handleConsign/Invalid.png);
+}
+
+
+.consignProgress{
+  padding: 10px 20px;
+}
+.consignProgress ul li{
+  width: 25%;
+  padding: 0;
+  text-align: center;
+}
+.consignProgress ul li p{
+  color:#ccc;
+}
+.round{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.progress_round_complete{
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #fc8a78;
+  z-index: 5;
+}
+.progress_line_complete{
+  width: 100%;
+  height: 1px;
+  background-color: #fc8a78;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -5px;
+}
+
+.progress_round_undo{
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #cccccc;
+  z-index: 5;
+}
+.progress_line_undo{
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -5px;
+}
+.doing_show{
+  color: #fff !important;
+  background-color: #fc8a78;
+  border-radius: 30px;
+  padding: 0;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.doing_show::before{
+  content: "";
+  width: 0;
+  height: 0;
+  border: 5px solid #fc8a78;
+  border-color: #fc8a78 transparent transparent transparent;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -5px;
+}
+.complete_font{
+  color:#fc8a78 !important;
+}
+.customSel_pos{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 150px;
+}
+.customSel_pos span{
+  color: #fc8a78;
+}
+.custom_sel{
+  background-image:url(../img/handleConsign/customerSel.png);
+}
+.select_city_w{
+  display: flex;
+  width: 100% !important;
+}
+
+/***********************    装车扫描 *************/
+.scanLoading_input{
+  width: 90px !important;
+}
+.m-t-0{
+  margin-top: 0;
+}
+.sealLoad_select_amount{
+  width: 100% !important;
+  padding-left: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start !important;
+  align-items: center;
+}
+.sealLoad_select_amount input{
+  width: 60px !important;
+  padding: 0px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.sealLoad_select_amount button{
+  /*display: inline-block;*/
+  width: 30px;
+  height:30px;
+ /* font-size: 16px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  background-image: none;*/
+
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 0;
+}
+/*.sealLoad_select_amount input{
+  /!*display: inline-block;*!/
+  width: 30px !important;
+  height:30px !important;
+  /!* font-size: 16px;
+   text-align: center;
+   white-space: nowrap;
+   vertical-align: middle;
+   touch-action: manipulation;
+   cursor: pointer;
+   -webkit-user-select: none;
+   user-select: none;
+   background-image: none;*!/
+  flex-direction: row;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}*/
+.cityPicker{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 44px;
+  padding-left: 100px;
+  justify-content: flex-start;
+}
+/*.ui-form-item div:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio){
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  position: relative;
+}*/
+.item-note{
+  color: #aaa;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.button-cancle{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+/***********************    消息中心 *************/
+.item-content{
+  display: flex;
+  flex-direction: row;
+}
+.message_item{
+  display: flex;
+  flex-direction: row;
+}
+.image{
+  width: 50px;
+  height: 50px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.person_img{
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.person_logo{
+  background-image:url(../img/messageCenter/person.png);
+}
+.message_right_info{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.message_tip{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.del_btn{
+  background-color: #d61b0c !important;
+  color: #fff !important;
+}
+
+
+/*************************   运价查询  **************************/
+.details{
+  background-color: #f1f1f1;
+  padding: 10px 15px;
+  color:#9a9a9a;
+}
+.ui-form-item{
+  position: relative;
+  margin: 0 0 0 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 45px;
+}
+.ui-form-item label:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio){
+  width: 80px;
+  position: absolute;
+  text-align: right;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #9a9a9a;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+.ui-form-item div:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio){
+  width: 80px;
+  position: absolute;
+  text-align: right;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color:#9a9a9a;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  line-height: 45px;
+}
+.ui-form-item input, .ui-form-item textarea{
+  height: 45px;
+  width: 100%;
+  border: none;
+  border: 0;
+  background: 0 0;
+  padding-left: 100px;
+  outline: none;
+  resize: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: transparent;
+  color: #c8c8c8;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.ui-form-item p,.ui-form-item textarea{
+  height: 45px;
+  width: 100%;
+  border: none;
+  border: 0;
+  background: 0 0;
+  padding-left: 100px;
+  outline: none;
+  resize: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: transparent;
+  color: #505050;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+input,input:focus,input:active{
+  user-select: text;
+}
+/*.ui-form-item-link:after{
+  background:url(../img/fareQuery/down_arrow.png) no-repeat center;
+  width: 18px;
+  height: 18px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  display: block;
+  content: " ";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -8px;
+}*/
+.item{
+  border-color: transparent;
+  background-color: transparent;
+  color: #444;
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: -1px;
+  padding: 0;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 16px;
+}
+.item-select:after{
+  background:url(../img/fareQuery/down_arrow.png) no-repeat center;
+  width: 18px;
+  height: 18px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  display: block;
+  content: " ";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -8px;
+  border: none;
+}
+.item-input{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-left: 15px;
+  /*border: none;*/
+  padding: 0 10px;
+  height: 45px;
+  padding: 0;
+}
+.select_list{
+  /*border-bottom: 1px solid #e5e5e5 !important;*/
+  border-left: none;
+  border-top: none;
+  border-right: none;
+}
+.input-label{
+  display: table;
+  padding: 0;
+  max-width: 100px;
+  width: 80px;
+  text-align: right;
+  color: #9a9a9a;
+  font-size: 14px;
+}
+.item-select select{
+  webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+   right: 0;
+  left: 80px;
+  padding: 0 48px 0 20px;
+  width: 80%;
+  max-width: 80%;
+  /*border: none;*/
+  background: none;
+  color: #c8c8c8;
+  text-indent: .01px;
+  text-overflow: '';
+  white-space: nowrap;
+  cursor: pointer;
+  direction: initial;
+}
+.fareQuery_info{
+  padding-bottom: 30px;
+}
+.fareQuery_info ul{
+  background-color: #e4e7ec;
+  border:1px solid #6e90c4;
+}
+.fareQuery_info ul li{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.fareQuery_b_b{
+  border-bottom: 1px dashed #859cbe;
+}
+.fareQuery_info ul li p{
+  display: flex;
+  width: 33.33%;
+  justify-content: center;
+  align-items: center;
+  color: #77aaf5;
+}
+.footer{
+  background-color: #484848 !important;
+  color:#fff;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  flex-direction: column;
+  justify-content: center;
+}
+.select_type{}
+.select_type ul{
+  margin: 0 0 0 15px;
+  padding: 10px 0;
+}
+.select_type ul li{
+  padding-left: 80px;
+}
+.fareQuery_footer_info{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  background-color:  #484848;
+  color: #fff;
+  padding: 0 15px;
+}
+
+
+/********************封签扫描*****************************/
+.tabs-striped.tabs-positive .tabs{
+}
+.tabs-top > .tabs, .tabs.tabs-top{
+  padding-top: 0;
+  background-position: bottom;
+  border-bottom-width: 1px;
+  top: 0;
+}
+.tabs-striped.tabs-positive .tab-item.tab-item-active, .tabs-striped.tabs-positive .tab-item.active, .tabs-striped.tabs-positive .tab-item.activated{
+  color:#505050;
+  border-color: #d61e14 !important;
+}
+.tabs-striped.tabs-positive .tab-item{
+  color:#505050;
+  /*border-color: #d61e14 !important;*/
+}
+.tabs-striped.tabs-positive .tabs{
+  background-color: #fff;
+}
+.sealScan_content{
+  top: 49px;
+}
+.sealScan_content_info{
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+.carInfo{
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+}
+.carInfo p{
+  margin: 10px;
+  width: 150px;
+  display: flex;
+  justify-content: flex-end;
+}
+.select_type{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+.select_type p{
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+.select_type p:active{
+  background-color: #fc8a78;
+  color:#fff;
+}
+.query_info{
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid #c9c9c9;
+}
+.sealScan_input_icon{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  border: none;
+  display: inline-block;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  vertical-align: middle;
+  transform: translate(-50%,-50%);
+  height: 100%;
+}
+.sealScan_info{
+  width: 90%;
+  margin: 0 auto;
+  padding: 25px 0;
+}
+.sealScan_info ul{
+  background-color: #e4e7ec;
+  border:1px solid #6e90c4;
+}
+.sealScan_info ul li{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.sealScan_left{
+  display: flex;
+  padding: 0 15px;
+}
+.sealScan_right{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+.sealScan_info_b_b{
+  border-bottom: 1px dashed #859cbe;
+}
+.sealScan_info ul li p{
+  display: flex;
+  width: 50%;
+  justify-content: flex-start;
+  align-items: center;
+  color: #77aaf5;
+}
+.sealScan_query{
+  background-image: url(../img/sealScan/sealScan-Query.png);
+}
+.sealScan_status_no{
+  background-image: url(../img/sealScan/notScan-Icon.png);
+}
+.sealScan_status_yes{
+  background-image: url(../img/sealScan/scan-Icon.png);
+}
+.sealScan_scan{
+  background-image: url(../img/sealScan/sealScan-Scan.png);
+}
+.selectedQuery{
+  background-color: red;
+  color:#fff;
+}
+.modelInput{
+  position: absolute;
+  right: 15px;
+}
+
+/********************  投诉录入 ***********************/
+.notLabel_input{
+  padding-left: 10px !important;
+}
+.complaints_entry{}
+.complaints_entry_query{
+  width: 100%;
+  margin: 0;
+}
+.infoItem{
+  padding: 10px 15px;
+  color: #9a9a9a;
+}
+.infoItem p{
+  padding:5px 0;
+}
+.check{
+  color:#fc8a78;
+}
+
+.complaints_Reason{
+  padding: 10px 15px;
+  background-color: #fff;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.complaints_Reason input{
+  width: 100%;
+  height: 100px;
+}
+.weui_textarea{
+  display: block;
+  border:0;
+  resize: none;
+  width: 100%;
+  font-size: 1em;
+  outline: 0;
+}
+  .weui_upload{
+  float: left;
+  position: relative;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 77px;
+  height: 77px;
+  border:1px solid #e5e5e5;
+}
+.weui_upload_files{
+  list-style: none;
+}
+.weui_cell{
+  padding: 10px 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  -webkit-box-align: center;
+}
+.weui_upload_input{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.weui_upload:before{
+  width: 2px;
+  height: 40px;
+}
+.weui_upload:after{
+  width: 40px;
+  height: 2px;
+}
+.weui_upload:before,
+.weui_upload:after{
+  content: " ";
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #d9d9d9;
+}
+.font_num_tip{
+  color: #b2b2b2;
+  text-align: right;
+}
+.complaintsList_icon{
+  background-image: url(../img/complaintsEntry/complaintsDetailIcon.png);
+}
+
+/***************** 员工管理 **************************/
+
+.holiday_flag{
+  background-image:url(../img/employeeManger/holidayStatus.png);
+}
+.leave_flag{
+  background-image:url(../img/employeeManger/leaveStatus.png);
+}
+.leave-status{
+  background-color: #c3c2c2 !important;
+}
+.employeeManage_item div p{
+  display: flex;
+  flex: 1;
+  padding: 0 !important;
+}
+
+/************ 高保上报 *******************/
+.searchBox{
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+}
+.searchBox input{
+  width: 100%;
+  padding: 0 15px;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  height: 45px;
+}
+.searchBox i{
+  position: absolute;
+  top: 0;
+  right: 15px;
+  height: 100%;
+}
+.search_num{
+  padding: 10px 15px;
+  text-align: right;
+  color: #9a9a9a;
+}
+.search{
+  background-image:url(../img/employeeManger/search.png);
+  width: 25px;
+  height: 25px;
+}
+
+.searchList ul li{
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  margin-bottom: 10px;
+  background-color: #ffbd4a;
+}
+.searchList_li_noBg{
+  background-color: #fff !important;
+  color: #9a9a9a !important;
+}
+.searchItem{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 10px 10px 15px;
+  overflow: hidden;
+}
+.searchItem_noBg{
+  padding: 0px !important;
+
+}
+.searchItem_title{
+  background-color: #fc8a78;
+  color:#fff;
+}
+.searchItem_info{
+  display: flex;
+  flex-direction: column !important;
+  padding: 10px !important;
+
+}
+.searchItem div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.searchItem div p{
+  display: flex;
+  /*flex: 1;*/
+  padding: 0;
+}
+.status_icon{
+  display: flex;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  vertical-align: middle;
+}
+.reported{
+  background-image:url(../img/hirReport/reported.png);
+}
+
+.StatusMark{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.sendAddress_icon{
+  background-image:url(../img/hirReport/sendAddress.png);
+  width: 20px;
+  height: 20px;
+}
+
+/************ 禁用车查询  *******************/
+.unBan{
+  background-image:url(../img/disabledCarQuery/unBan.png);
+}
+.Ban{
+  background-image:url(../img/disabledCarQuery/ban.png);
+}
+.ban-status{
+  background-color: #c3c2c2 !important;
+}
+/************ 禁用司机查询  *******************/
+
+.banIcon{
+  background-image:url(../img/disabledDriverQuery/ban.png);
+}
+
+/************ 入仓扫描 *******************/
+.warehousingScan_info{
+  width: 90%;
+  margin: 0 auto;
+  padding: 25px 0;
+}
+.warehousingScan_info ul{
+
+}
+.warehousingScan_info ul li{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.item_len{
+  width: 100%;
+}
+.item_pos{
+  margin-bottom: 20px !important;
+}
+.delete_item{
+  background-image:url(../img/warehousingScan/deleteIcon.png);
+}
+
+
+/*********************  我的送货详情页面 ***************************/
+.z-i{
+  z-index: 5;
+}
+.search_tab_content{
+
+}
+.search_tab_content .tabs-top > .tabs{
+  top:45px;
+  background-color: #f1f1f1;
+}
+.handleDelivery_content{
+  top:44px;
+  background-color: #f1f1f1;
+}
+.deliveryReceipt_tab_content{
+  top: 49px;
+}
+.handleDelivery_tab_content{
+  top: 49px;
+}
+.deliveryReceiptDetail_item{
+  background-color: #fff !important;
+  color: #9a9a9a !important;
+}
+.hasCompleteIcon{
+  background-image:url(../img/deliveryReceipt/completed_icon.png);
+}
+.hasStartedIcon{
+  background-image:url(../img/deliveryReceipt/hasStarted_icon.png);
+}
+.noStartedIcon{
+  background-image:url(../img/deliveryReceipt/notStarted_icon.png);
+}
+
+
+/*******************网点查询***************************/
+.website_item_title{
+  color: #505050;
+  font-size: 16px;
+}
+.tel_icon{
+  background-image:url(../img/websiteQuery/telIcon.png);
+  margin: 0 10px;
+}
+.imp_info{
+  color:red !important;
+  text-decoration: underline;
+}
+.footer_tips{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15px;
+  background-color: #484848 !important;
+  width: 100%;
+}
+.location{
+  background-image:url(../img/websiteQuery/location.png);
+}
+.website_local{
+  width: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/****************** 路线库存查询 ********************/
+.pathReserveQueryTip{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 15px;
+  color: #9a9a9a;
+}
+.pathReserveQueryTip span{
+  padding: 0 5px;
+}
+.date_icon{
+  background-image:url(../img/publicIcon/clockIcon.png);
+}
+
+
+/************************  办理提货 ************************/
+.handleDelivery_icon{
+  padding: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+}
+.signed{
+  background-image:url(../img/handleDelivery/signedStatus.png);
+}
+.delivery{
+  background-image:url(../img/handleDelivery/deliveryIcon.png);
+}
+.alreayDelivery{
+  background-image:url(../img/handleDelivery/alreadyDelivery.png);
+}
+.alreaySigned{
+  background-image:url(../img/handleDelivery/alreaySigned.png);
+}
+.searchType{
+  background-image:url(../img/handleDelivery/searchTypeIcon.png);
+  width: 10px;
+  height: 10px;
+}
+.searchHistory{
+  background-image:url(../img/handleDelivery/searchHistoryIcon.png);
+  width: 15px;
+  height: 15px;
+}
+.searchTypeItem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.searchTitle{
+  height: 28px;
+  position: relative;
+}
+.selectItem{
+  color:#9a9a9a;
+  height: 100%;
+}
+.search-form{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+.searchHistoryList{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search_cancel_btn{
+  color: #fff !important;
+  margin: 0 !important;
+  border: none;
+  padding: 0 5px !important;
+}
+.item-input-wrapper{
+  padding: 0;
+}
+.bar.item-input-inset .item-input-wrapper input{
+  padding: 0 10px;
+}
+.showAllType_content{
+  position: absolute !important;
+  top:30px;
+  left: 0;
+}
+.rectangle{
+  border-radius: 15px;
+  position: relative;
+}
+/*小三角*/
+.rectangle::before{
+  content: "";
+  width: 0;
+  height: 0;
+  border: 15px solid #404040;
+  border-color: transparent transparent #404040 transparent;
+  position:absolute;
+  top:-25px;
+  left: 25px;
+}
+.userSelectTypeItem{
+  line-height: 1.5;
+  padding: 5px 0;
+}
+.item-input-inset{
+  overflow: inherit;
+}
+
+/**********************  经营分析 *************************/
+.slider-pager .slider-pager-page{
+  color:#d61e14 !important;
+}
+.dailyAnalysis_tab_content{
+  top:0;
+}
+.title_tip{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.total_amount{
+  color:#d61e14;
+}
+.getPieces{
+  background-image:url(../img/businessAnalysis/getPieces.png);
+  width: 35px;
+  height: 35px;
+}
+.byCash{
+  background-image:url(../img/businessAnalysis/byCash.png);
+  width: 35px;
+  height: 35px;
+}
+.toPay{
+  background-image:url(../img/businessAnalysis/toPay.png);
+  width: 35px;
+  height: 35px;
+}
+.receivable{
+  background-image:url(../img/businessAnalysis/receivable.png);
+  width: 35px;
+  height: 35px;
+}
+.dailyAnalysis{
+}
+.dailyAnalysis ul li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+}
+.dailyAnalysis_item_left{
+  padding: 0 15px;
+}
+.dailyAnalysis_item_right{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  width: 100%;
+  padding: 10px 15px;
+}
+.total{
+  background-color: #d61e14;
+  color:#fff;
+  width: 100px;
+  text-align: center;
+}
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated{
+  color:#ff0000;
+}
+.tab_dailyReport_sel{
+  background-image:url(../img/businessAnalysis/tab_dailyReport_sel.png);
+}
+.tab_dailyReport_unSel{
+  background-image:url(../img/businessAnalysis/tab_dailyReport_unSel.png);
+}
+.tab_dailyAnalysis_sel{
+  background-image:url(../img/businessAnalysis/tab_dailyAnalysis_sel.png);
+}
+.tab_dailyAnalysis_unSel{
+  background-image:url(../img/businessAnalysis/tab_dailyAnalysis_unSel.png);
+}
+.tab_monthAnalysis_sel{
+  background-image:url(../img/businessAnalysis/tab_monthAnalysis_sel.png);
+}
+.tab_monthAnalysis_unSel{
+  background-image:url(../img/businessAnalysis/tab_monthAnalysis_unSel.png);
+}
+.tab-item .icon{
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/******************* 签单扫描 ****************************/
+
+.signScan_camera{
+  background-image:url(../img/signScan/signScanCamera.png);
+}
+.signScan_phone{
+  background-image:url(../img/signScan/signScanphone.png);
+  margin: 0;
+}
+.signScanList ul li{
+  padding: 0 15px;
+}
+.signScan_item{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0;
+  overflow: hidden;
+}
+.order_status{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.signScan_tel{
+  display: flex;
+  flex-direction: row;
+  color:#bfbfbf;
+}
+.signScan_uploadPic{
+
+}
+.signScan_uploadPic ul{
+  width: 100%;
+}
+.signScan_uploadPic ul li{
+  width: 25%;
+  padding: 0;
+  height: 100px;
+  padding: 5px;
+  float:left;
+}
+.uploadPic_1{
+  background-image:url(../img/signScan/uploadPic_1.png);
+}
+.orderFlag{
+  color:#bfbfbf;
+}
+.modelUpload{
+  background-image: url(../img/signScan/modelUpload.png);
+  width: 35px;
+  height: 35px;
+}
+.uplaodCross{
+  background-image: url(../img/signScan/uploadCross.png);
+  width: 50px;
+  height: 50px;
+}
+.uploadText{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+.modelSearch{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 100%;
+}
+
+.uplaodContent{
+  padding: 10px;
+}
+.uplaodContent ul{
+  width: 100%;
+  font-size: 0;
+}
+.uplaodContent ul li{
+  width: 33.3333%;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 2px;
+  position: relative;
+  vertical-align: middle;
+}
+.uplaodContent ul li:before{
+  content: " ";
+  display: inline-block;
+  padding-bottom: 100%;
+  width: .1px;
+  vertical-align: middle;
+}
+.uploadText_item{
+  padding: 10px;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  width: -webkit-calc(100% - 4px);
+  height: 100%;
+  height: -webkit-calc(100% - 4px);
+  position: absolute;
+  left: 2px;
+  top:2px;
+}
+.modelTitleScan{
+  background-image: url(../img/signScan/scanCode.png);
+}
+.bigImg_content{
+  position: fixed;
+  top: 0 !important;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.6)
+}
+.showBigImg_pop{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  display: block;
+  transform: translate(-50%,-50%);
+  /*margin-left: -150px;
+  margin-top:-200px;*/
+  height: 80%;
+  width: 80%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/*********************** 进仓单扫描 ****************************/
+
+.showImg{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  /* background-size: contain; */
+  background-size: cover;
+  vertical-align: middle;
+}
+/*************************** 装车质量跟踪 *********************/
+.loadingQuality_uploadPic{
+  padding: 15px 10px;
+}
+.loadingQuality_uploadPic ul{
+  width: 100%;
+}
+.loadingQuality_uploadPic ul li{
+  width: 50%;
+  padding: 0;
+  height: 200px;
+  padding: 5px;
+  float:left;
+  position: relative;
+}
+.loadingQuality_uploadPic_1{
+  background-image:url(../img/loadingQuality/loadingQualityDetailPic_1.png);
+}
+.loadingQuality_uploadPic_2{
+  background-image:url(../img/loadingQuality/loadingQualityDetailPic_2.png);
+}
+.loadingQuality_uploadPic_3{
+  background-image:url(../img/loadingQuality/loadingQualityDetailPic_3.png);
+}
+.loadingQuality_uploadPic_4{
+   background-image:url(../img/loadingQuality/loadingQualityDetailPic_4.png);
+ }
+.savePic{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color:#fff;
+  background-color: #1e1f1b;
+  padding: 3px;
+}
+.pic_camera_pos{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.pic_camera_icon{
+  background-image:url(../img/loadingQuality/pic_camera.png);
+  width: 25px;
+  height: 25px;
+}
+
+/********************** 指标管理 **************************/
+.targetManage_content{
+  top: 49px;
+}
+.last_unline{
+  border-bottom: none !important;
+}
+.trendUp{
+  background-image:url(../img/targetManage/trendUp.png);
+  width: 10px;
+  height: 10px;
+}
+.trendDown{
+  background-image:url(../img/targetManage/trendDown.png);
+  width: 10px;
+  height: 10px;
+}
+.targetManage_trend{
+}
+/*.targetManage_trend ul{
+  width: 100%;
+}
+.targetManage_trend ul li{
+  width: 33.3333%;
+  float:left;
+  padding: 10px;
+  box-shadow: 0 0 0 1px #e5e5e5;
+}*/
+.targetManage_trendItem{
+  box-shadow: 0 0 0 1px #e5e5e5;
+  padding: 10px;
+}
+.item_top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.item-bot{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+.up_font{
+  color:#22a249;
+}
+.down_font{
+  color:#d61e14;
+}
+.balance_font{
+  color:#9d9dff;
+}
+.month_font{
+  color:#9a9a9a;
+}

@@ -1,0 +1,43 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>查询</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+      <div class="bg-f" id="complaints_content">
+        <form class="b-td">
+          <div class="ui-form-item ui-form-item-link b-d">
+            <label>时间起点</label>
+            <input ng-model="user.startTime" placeholder="{{startTime}}" ng-click="openDatePicker(1)" readonly>
+          </div>
+          <div class="ui-form-item ui-form-item-link b-d">
+            <label>时间终点</label>
+            <input ng-model="user.endTime" placeholder="{{endTime}}" ng-click="openDatePicker(2)" readonly>
+          </div>
+
+          <label class="item item-input item-select select_list b-d-i">
+            <div class="input-label">状态</div>
+            <select>
+              <option selected>请选择运输状态</option>
+              <option>全部</option>
+              <option>一部分</option>
+              <option>二部分</option>
+            </select>
+          </label>
+          <div class="ui-form-item">
+            <label>投诉单号</label>
+            <input type="text" ng-model="user.order" placeholder="请输入投诉单号">
+          </div>
+        </form>
+      </div>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-assertive">
+    <button type="button" class="button-b" ng-click="goQueryComplaints()">查询</button>
+  </ion-footer-bar>
+</ion-view>
+
+

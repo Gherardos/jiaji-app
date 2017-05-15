@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/platforms/android/cordova/lib/builders/GradleBuilder.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/platforms/android/cordova/node_modules/cordova-common/src/superspawn.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/css/main.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/css/slide_menu.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/city-picker/cityData.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/controllers.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/data-time-picker/ionic-datepicker.bundle.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/services.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/modules/business/fareQuery/css/fareQuery.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/modules/business/handleConsign/views/consignComplete.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/modules/business/home/css/home.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/modules/business/home/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/modules/business/home/js/controller/homeController.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/modules/business/loadingQuality/views/loadingQualityDetail.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/modules/business/login/css/login.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/modules/business/login/js/login.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/modules/business/signScan/views/upload.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/modules/business/websiteQuery/views/websiteQueryDetail.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/modules/business/websiteQuery/views/websiteQueryMap.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/chat-detail.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/tab-account.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/tab-chats.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/tabs.html" charset="UTF-8" />
+  </component>
+</project>

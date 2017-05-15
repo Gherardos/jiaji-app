@@ -1,0 +1,46 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>办理托运</ion-nav-title>
+      <ion-nav-buttons side="right">
+        <p ng-click="goConsignDetail()">详情录入</p>
+      </ion-nav-buttons>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="searchBox">
+      <input type="text" placeholder="请输入运单号">
+      <i class="icon search"></i>
+    </div>
+    <div class="search_num">检索到{{handleConsignList}}条信息</div>
+    <div class="searchList">
+      <ul>
+        <li ng-repeat="data in handleConsign" ng-class="{'has_abolished':data.flag == 0,'':data.flag != 0}" ng-click="goConsignDetail()">
+          <div class="searchItem">
+            <div>
+              <p>订单号：{{data.order}}</p>
+            </div>
+            <div class="consign_info">
+              <p class="text-ellipsis p-r-5">收货人：{{data.receiver}}</p>
+              <p  class="text-ellipsis p-l-5">发货人：{{data.sender}}</p>
+            </div>
+          </div>
+
+          <div class="handleConsign_right">
+            <div class="consign_icon_item p-d-10">
+              <i class="handleConsign_icon printer"></i>
+            </div>
+            <div ng-class="{'consign_icon_item p-d-10':data.flag == 1 ,'':data.flag == 0}">
+              <i ng-class="{'delete handleConsign_icon':data.flag == 1,'Invalid status_icon':data.flag == 0}"></i>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>
+
+

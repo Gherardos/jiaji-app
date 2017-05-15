@@ -1,0 +1,69 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>扫描装车</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="bg-f">
+      <div class="carInfo">
+        <p>发车车序号：</p>
+        <div class="select_type">
+          <p ng-click="queryType('A')" ng-class="{'selectedQuery': selectAll == true}">全部</p>
+          <p ng-click="queryType('L')" ng-class="{'selectedQuery': selectL == true}">L</p>
+          <p ng-click="queryType('M')" ng-class="{'selectedQuery': selectM == true}">M</p>
+          <p ng-click="queryType('D')" ng-class="{'selectedQuery': selectD == true}">D</p>
+        </div>
+      </div>
+      <div class="ui-form-item query_info">
+        <input type="text" value="" placeholder="请输入重量" style="padding-left: 10px;">
+        <i class="sealScan_input_icon sealScan_query"></i>
+      </div>
+      <div class="warehousingScan_info">
+        <ul>
+          <li ng-repeat="data in scanLoadingData">
+            <div class="item_len">车序号：{{data.no}}</div>
+            <i class="icon delete_item"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="details">装车信息</div>
+    <div class="ui-form-td bg-f b-td">
+      <div class="ui-form-item ">
+        <div class="scanLoading_input">路线</div>
+        <p>上海-无锡</p>
+      </div>
+      <div class="ui-form-item ">
+        <div class="scanLoading_input">目的公司编号</div>
+        <p>0210,0211,0510,0220,0100</p>
+      </div>
+    </div>
+
+    <div class="details">装车人员信息</div>
+    <div class="ui-form-td bg-f b-td">
+      <div class="ui-form-item ">
+        <div class="scanLoading_input">装卸班组</div>
+        <input type="text" placeholder="">
+      </div>
+      <div class="ui-form-item ">
+        <div class="scanLoading_input">装卸班组长</div>
+        <input type="text" placeholder="">
+      </div>
+      <div class="ui-form-item" keyboard-attach>
+        <div class="scanLoading_input">装卸班组成员</div>
+        <input type="text" placeholder="">
+      </div>
+    </div>
+
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-assertive">
+    <button type="button" class="button-b" ng-click="goScanLoadingNext()">下一步</button>
+  </ion-footer-bar>
+</ion-view>
+
+

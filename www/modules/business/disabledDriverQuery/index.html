@@ -1,0 +1,70 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>详情</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="bg-f">
+      <form class="b-td">
+        <div class="ui-form-item b-d">
+          <label>姓名</label>
+          <input type="text" ng-model="user.name" placeholder="请输入要查询的姓名">
+        </div>
+        <div class="ui-form-item b-d">
+          <label>身份证号</label>
+          <input type="text" ng-model="user.id" placeholder="请输入要查询的身份证号">
+        </div>
+        <div class="ui-form-item b-d">
+          <label>驾驶证号</label>
+          <input type="text" ng-model="user.driveId" placeholder="请输入要查询的驾驶证号">
+        </div>
+        <div class="ui-form-item b-d">
+          <label>上岗证号</label>
+          <input type="text" ng-model="user.inducationId" placeholder="请输入要查询的上岗证号">
+        </div>
+        <div class="ui-form-item">
+          <label>时间</label>
+          <input type="text" ng-model="user.time" placeholder="请输入要查询的装车车序">
+        </div>
+      </form>
+    </div>
+
+    <div class="p-td-35 t-c">
+      <button type="button" class="button-s" ng-click="goQueryDisabledCar(user)">查询</button>
+    </div>
+
+    <div class="searchList" ng-if="disabledDriverQueryData.length > 0 ">
+      <ul>
+        <li ng-repeat="data in disabledDriverQueryData">
+          <div class="searchItem">
+            <div>
+              <p>{{data.name}}</p>
+            </div>
+            <div>
+              <p>驾照：{{data.driveId}}</p>
+            </div>
+            <div>
+              <p>身份证：{{data.id}}</p>
+            </div>
+            <div>
+              <p>上岗证：{{data.inducationId}}</p>
+            </div>
+            <div>
+              <p>描  述：{{data.tips}}</p>
+            </div>
+          </div>
+          <div class="StatusMark">
+            <i ng-if="data.flag == 1" class="status_icon banIcon"></i>
+            <i ng-if="data.flag == 0" class="status_icon"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>
+
+

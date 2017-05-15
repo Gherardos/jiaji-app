@@ -1,0 +1,32 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>消息中心</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content ng-controller="MessageCenterCtrl" ng-click="closeDelBtn()" overflow-scroll="false">
+    <div class="messageCenter">
+      <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe"
+                delegate-handle="messageCenter">
+        <ion-item ng-repeat="messageData in vm.messages">
+          <div class="person_img">
+            <i class="image person_logo"></i>
+          </div>
+          <div class="message_right_info text-ellipsis">
+            <div class="message_tip p-td-5">
+              <h3>{{messageData.title}}</h3>
+              <p>{{messageData.date}}</p>
+            </div>
+            <div class="text-ellipsis p-td-5 f-col-9">{{messageData.detail}}</div>
+          </div>
+          <ion-option-button ng-click="deleteRecord($index,item)" class="button-info del_btn">删除
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+    </div>
+    <ion-infinite-scroll ng-if="!closeMore" on-infinite="upInfinite()"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,67 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>我的送货</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="details">运单审签</div>
+    <div class="ui-form-td bg-f b-td">
+      <div class="ui-form-item b-d">
+        <div>运单号</div>
+        <p>1234567890</p>
+      </div>
+      <div class="ui-form-item b-d">
+        <div>提货单号</div>
+        <p>11008866</p>
+      </div>
+      <div class="ui-form-item b-d">
+        <div>货物编号</div>
+        <p>501243</p>
+      </div>
+      <div class="ui-form-item b-d">
+        <div>收货人</div>
+        <p>刘芸</p>
+      </div>
+      <div class="ui-form-item">
+        <div>联系方式</div>
+        <p>12345678912  </p>
+      </div>
+    </div>
+
+
+    <div class="details">签收人信息</div>
+    <div class="ui-form-td bg-f b-td">
+      <div class="ui-form-item b-d">
+        <div>姓名</div>
+        <input type="text" placeholder="请输入姓名">
+      </div>
+      <div class="ui-form-item b-d">
+        <div>证件类型</div>
+        <input type="text" placeholder="请选择证件类型">
+      </div>
+      <div class="ui-form-item b-d">
+        <div>证件号码</div>
+        <input type="text" placeholder="请输入证件号码">
+      </div>
+      <div class="ui-form-item b-d">
+        <div>代提人</div>
+        <input type="text" placeholder="请输入代提人姓名">
+      </div>
+      <div class="ui-form-item b-d">
+        <div>证件类型</div>
+        <input type="text" placeholder="请选择证件类型">
+      </div>
+      <div class="ui-form-item">
+        <div>证件号码</div>
+        <input type="text" placeholder="请输入证件号码">
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-assertive">
+    <button type="button" class="button-b" ng-click="goDeliverReceiptDetail()">提交</button>
+  </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,128 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-buttons>
+        <a class="button button-icon left_menu" menu-toggle="left">
+          <i class="icon_back home_personCenter"></i>
+        </a>
+      </ion-nav-buttons>
+      <ion-nav-title>
+        <i class="home_title_logo"></i>
+      </ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+
+  <ion-content ng-controller="HomeCtrl" scrollbar-y="false">
+    <ion-refresher pulling-text="玩命加载中···" pulling-icon="" refreshing-icon="" class="huatek-refresh-icon"  on-refresh="doRefresh()"></ion-refresher>
+    <div class="home_tips">
+      <p>揽货日报：2015年7月1日揽货量350万元</p>
+    </div>
+
+    <div class="home-navigation">
+      <p class="p-td-10 p-d-10">业务类APP</p>
+      <div class="row nav-list">
+        <div class="col col-25 consign b-d b-r">
+          <a href="#/handleConsign">
+            <i class="nav-consign"></i>
+            <p class="p-t-10">办理托运</p></a></div>
+        <div class="col col-25 signScan b-d b-r">
+          <a href="#/signScan">
+            <i class="nav-signScan"></i>
+            <p class="p-t-10">签单扫描</p></a></div>
+        <div class="col col-25 deliverySign b-d b-r">
+          <a href="#/deliveryReceipt">
+            <i class="nav-deliverySign"></i>
+            <p class="p-t-10">送货签收</p></a></div>
+        <div class="col col-25 warehousingScan b-d b-r">
+          <a href="#/warehousingScan">
+            <i class="nav-warehousingScan"></i>
+            <p class="p-t-10">入仓扫描</p></a></div>
+        <div class="col col-25 goodsQuery b-d b-r">
+          <a href="#/goodsQuery">
+            <i class="nav-goodsQuery"></i>
+            <p class="p-t-10">货件查询</p></a></div>
+        <div class="col col-25 fareQuery b-d b-r">
+          <a href="#/fareQuery">
+            <i class="nav-fareQuery"></i>
+            <p class="p-t-10">运价查询</p></a></div>
+        <div class="col col-25 websiteQuery b-d b-r">
+          <a href="#/websiteQuery">
+            <i class="nav-websiteQuery"></i>
+            <p class="p-t-10">网点查询</p></a></div>
+        <div class="col col-25 contrabandQuery b-d b-r">
+          <a href="#/contrabandQuery">
+            <i class="nav-contrabandQuery"></i>
+            <p class="p-t-10">禁用品查询</p></a></div>
+        <div class="col col-25 complaintEntry b-d b-r">
+          <a href="#/complaintsQuery">
+            <i class="nav-complaintEntry"></i>
+            <p class="p-t-10">投诉录入</p></a></div>
+        <div class="col col-25 hifReport b-d b-r">
+          <a href="#/hifReport">
+            <i class="nav-hifReport"></i>
+            <p class="p-t-10">高保上报</p></a></div>
+        <div class="col col-25 sealSacns b-d b-r">
+          <a href="#/sealScan">
+            <i class="nav-sealSacns"></i>
+            <p class="p-t-10">封签扫描</p></a></div>
+        <div class="col col-25 keepScan b-d b-r">
+          <a href="#/handleDelivery">
+            <i class="nav-keepScan"></i>
+            <p class="p-t-10">办理提货</p></a></div>
+        <div class="col col-25 scanLoading b-d b-r">
+          <a href="#/scanLoading">
+            <i class="nav-scanLoading"></i>
+            <p class="p-t-10">扫描装车</p></a></div>
+        <div class="col col-25 scanUnloading b-d b-r">
+          <a href="#/loadingQuality">
+            <i class="nav-scanUnloading"></i>
+            <p class="p-t-10">装车质量跟踪</p></a></div>
+        <div class="col col-25 OASys b-d b-r">
+          <a href="#/employeeManage">
+            <i class="nav-OASys"></i>
+            <p class="p-t-10">员工管理</p></a></div>
+        <div class="col col-25 warehousingScan b-d b-r">
+          <a href="#/enterWarehouseScan">
+            <i class="nav-warehousingScan"></i>
+            <p class="p-t-10">进仓单扫描</p></a></div>
+      </div>
+    </div>
+
+    <div class="home-navigation">
+      <p class="p-td-10 p-d-10">管理类APP</p>
+      <div class="row nav-list">
+        <div class="col col-25 operationAnalysis b-d b-r">
+          <a href="#/businessAnalysis">
+            <i class="nav-operationAnalysis"></i>
+            <p class="p-t-10">经营分析</p></a></div>
+        <div class="col col-25 intoManage b-d b-r">
+          <a href="#/warehousingManage">
+            <i class="nav-intoManage"></i>
+            <p class="p-t-10">进仓管理</p></a></div>
+        <div class="col col-25 deliveryReceipt b-d b-r">
+          <a href="#/pathReserveQuery">
+            <i class="nav-deliveryReceipt"></i>
+            <p class="p-t-10">线路库存查询</p></a></div>
+        <div class="col col-25 signScan b-d b-r">
+          <a href="#/disabledCarQuery">
+            <i class="nav-signScan"></i>
+            <p class="p-t-10">禁用车查询</p></a></div>
+        <div class="col col-25 signScan b-d b-r">
+          <a href="#/disabledDriverQuery">
+            <i class="nav-signScan"></i>
+            <p class="p-t-10">禁用司机查询</p></a></div>
+
+        <!--自己构造的模块-->
+        <div class="col col-25 signScan b-d b-r">
+          <a href="#/messageCenter">
+            <i class="nav-signScan"></i>
+            <p class="p-t-10">消息中心</p></a></div>
+        <div class="col col-25 signScan b-d b-r">
+          <a href="#/targetManage">
+            <i class="nav-signScan"></i>
+            <p class="p-t-10">指标管理</p></a></div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

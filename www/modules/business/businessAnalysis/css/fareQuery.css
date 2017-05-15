@@ -1,0 +1,123 @@
+/*   运价查询  */
+.details{
+  background-color: #f1f1f1;
+  padding: 10px 15px;
+  color:#9a9a9a;
+}
+.ui-form-item{
+  position: relative;
+  margin: 0 0 0 15px;
+  padding:15px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+}
+.ui-form-item label:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio){
+  width: 80px;
+  position: absolute;
+  text-align: right;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #9a9a9a;
+}
+.ui-form-item div:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio){
+  width: 80px;
+  position: absolute;
+  text-align: right;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color:#9a9a9a;
+}
+.ui-form-item input, .ui-form-item textarea{
+  width: 100%;
+  border: none;
+  border: 0;
+  background: 0 0;
+  padding-left: 100px;
+  outline: none;
+  resize: none;
+  color: #c8c8c8;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+.ui-form-item p,.ui-form-item textarea{
+  border: none;
+  border: 0;
+  background: 0 0;
+  padding-left: 100px;
+  outline: none;
+  resize: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: transparent;
+  color: #505050;
+}
+input,input:focus,input:active{user-select: text;}
+.ui-form-item-link:after{
+  background:url(../../../../img/fareQuery/down_arrow.png) no-repeat center;
+  width: 18px;
+  height: 18px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  display: block;
+  content: " ";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -8px;
+}
+.fareQuery_info{
+  padding-bottom: 30px;
+}
+.fareQuery_info ul{
+  background-color: #e4e7ec;
+  border:1px solid #6e90c4;
+}
+.fareQuery_info ul li{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.fareQuery_b_b{
+  border-bottom: 1px dashed #859cbe;
+}
+.fareQuery_info ul li p{
+  display: flex;
+  width: 33.33%;
+  justify-content: center;
+  align-items: center;
+  color: #77aaf5;
+}
+.footer{
+  background-color: #484848 !important;
+  color:#fff;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  flex-direction: column;
+  justify-content: center;
+}
+.select_type{}
+.select_type ul{
+  margin: 0 0 0 15px;
+  padding: 10px 0;
+}
+.select_type ul li{
+  padding-left: 80px;
+}
+.fareQuery_footer_info{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  background-color:  #484848;
+  color: #fff;
+  padding: 0 15px;
+}

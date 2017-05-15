@@ -1,0 +1,51 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>上传</ion-nav-title>
+      <ion-nav-buttons side="right">
+        <button class="button title-search-icon" ng-click="modal.show()">
+          <i class="icon modelTitleScan"></i>
+        </button>
+      </ion-nav-buttons>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content scrollbar-y="false" on-scroll="scrollListen()"  delegate-handle="businessList">
+    <!--<ion-scroll ng-style="{'height': ionScrollHeight}">-->
+    <div>
+      <div class="ui-form-item b-d">
+        <label>运单号</label>
+        <input type="text" ng-model="newQuery.orderId" placeholder="请输入要查询的运单号">
+      </div>
+      <div class="ui-form-item b-d">
+        <label>电话号码</label>
+        <input type="text" ng-model="newQuery.phoneNum" placeholder="请输入要查询的电话号码">
+      </div>
+      <div class="ui-form-item b-d">
+        <label>签单类型</label>
+        <input type="text" ng-model="newQuery.signType" placeholder="请输入要查询的签单类型">
+      </div>
+      <div class="uplaodContent">
+        <ul>
+          <li>
+            <div class="uploadText_item b-a" data-ng-click="picture()">
+              <i class="icon modelUpload"></i>
+            </div>
+          </li>
+          <li>
+            <div class="uploadText_item b-a-d">
+              <i class="icon uplaodCross"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="p-td-35 t-c">
+        <button type="button" class="button-s" ng-click="upload(newQuery)">上传</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+

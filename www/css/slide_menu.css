@@ -1,0 +1,116 @@
+.scroll{
+  width: 100%;
+  height: 100%;
+}
+.slide_menu_content{
+  background-color: #cc0e09;
+  color:#fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.personCenter_info{
+  position: relative;
+}
+.personCenter_info .user_img{
+  padding: 50px 0;
+  background-image: radial-gradient(8em circle at center,hsla(220,89%,100%,.4),hsla(360,60%,60%,0));
+}
+
+.personCenter_info .user_name{
+   position: absolute;
+  font-size: 20px;
+  bottom: 0;
+  color: #fff;
+  left:50%;
+  transform: translate(-50%,0);
+
+}
+.user_img i{
+  display: flex;
+  width:100%;
+}
+.user_info{
+  padding: 20% 0 0 0;
+}
+.user_info .user_info_item{
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0px;
+}
+.user_info .user_info_item .left_img{
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.user_info .user_info_item .right_info{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.bg_img{
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  vertical-align: middle;
+}
+.slide_icon{
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+.person_login_img{
+  width: 100px;
+  height: 100px;
+  background-image: url(../img/slideMenu/personImg.png);
+}
+.employee_code{
+  background-image: url(../img/slideMenu/personCode.png);
+}
+.bind_location{
+  background-image: url(../img/slideMenu/location.png);
+}
+.operation{
+  background-image: url(../img/slideMenu/organization.png);
+}
+.to_bind{
+  background-image: url(../img/slideMenu/toBind.png);
+  width: 18px;
+  height: 18px;
+}
+.login_back{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+}
+.login_back .back_btn{
+   display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+  border: 1px solid #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+.login_back .back_btn p{
+  padding:0 5px;
+}
+.login_back_icon{
+  background-image: url(../img/slideMenu/loginBack.png);
+  width: 16px;
+  height: 16px;
+}

@@ -1,0 +1,39 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek-search">
+    <ion-nav-title>
+    <ion-header-bar class="item-input-inset">
+      <div class="item-input-wrapper searchTitle">
+        <div class="dis-f-row selectItem" ng-click="selectTypeItem()">
+          <p class="p-d-10 f14 searchTypeItem">{{defaultType.name}}</p>
+          <i class="icon searchType"></i>
+        </div>
+        <div ng-if="selectSearchType" class="rectangle showAllType_content">
+          <ul style="background-color: #404040" class="f14 p-d-10">
+            <li class="userSelectTypeItem" ng-repeat="item in selectType" ng-click="UserSelectTypeItem($index,item)">{{item.name}}</li>
+          </ul>
+        </div>
+
+        <form ng-submit="goSearch(defaultType,searchContent)" action="" class="search-form">
+          <input type="search" placeholder="请输入要查询的关键字" ng-model="searchContent">
+        </form>
+      </div>
+
+      <button class="button button-clear search_cancel_btn" ng-click="cancle()">取消</button>
+
+    </ion-header-bar>
+    </ion-nav-title>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="details">搜索历史</div>
+    <div ng-if="searchHistory.length > 0" class="bg-f">
+      <ul>
+        <li class="p-td-10 p-d-15 searchHistoryList b-d" ng-repeat="item in searchHistory">
+          <div class="p-d-10">
+            <i class="icon searchHistory"></i>
+          </div>
+          <p>{{item}}</p>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

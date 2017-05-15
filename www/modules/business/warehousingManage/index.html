@@ -1,0 +1,36 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>进仓管理</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="searchBox">
+      <input type="text" placeholder="请输入机构名称">
+      <i class="icon search"></i>
+    </div>
+    <div class="search_num">检索到{{queryListNum}}条信息</div>
+    <div class="searchList">
+      <ul>
+        <li ng-repeat="data in warehousingManageData" class="searchList_li_noBg">
+          <div class="searchItem searchItem_noBg">
+            <div class="searchItem_title p-d-10">
+              <p>{{data.address}}</p>
+              <p>注：{{data.tip}}</p>
+            </div>
+              <div class="searchItem_info">
+                <p>{{data.warehouse}}</p>
+                <p>{{data.little_info}}</p>
+                <p>{{data.over_info}}</p>
+              </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>
+
+

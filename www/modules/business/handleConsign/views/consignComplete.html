@@ -1,0 +1,99 @@
+<ion-view>
+  <ion-nav-bar class="bar-huatek">
+    <ion-header-bar class="bar-huatek">
+      <ion-nav-back-button>
+        <i class="icon_back goBack"></i>
+      </ion-nav-back-button>
+      <ion-nav-title>办理托运</ion-nav-title>
+    </ion-header-bar>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="bg-f m-b-10 consignProgress f12">
+      <ul class="row">
+        <li class="col">
+          <p class="p-td-10 complete_font">第一步</p>
+          <div class="round">
+            <div class="progress_round_complete"></div>
+            <div class="progress_line_complete"></div>
+          </div>
+
+          <div class="p-td-10 f14">办理托运</div>
+        </li>
+        <li class="col">
+          <p class="p-td-10  complete_font">第二步</p>
+          <div class="round">
+            <div class="progress_round_complete"></div>
+            <div class="progress_line_complete"></div>
+          </div>
+        </li>
+
+        <li class="col">
+          <p class="p-td-10 complete_font">第三步</p>
+          <div class="round">
+            <div class="progress_round_complete"></div>
+            <div class="progress_line_complete"></div>
+          </div>
+        </li>
+
+        <li class="col">
+          <p class="p-td-10 doing_show">完成</p>
+          <div class="round">
+            <div class="progress_round_complete"></div>
+          </div>
+          <div class="p-td-10 f14">办理托运</div>
+        </li>
+      </ul>
+    </div>
+    <div class="ui-form-td bg-f b-td">
+      <div class="ui-form-item b-d">
+        <div>客户编码</div>
+        <p>11008866</p>
+      </div>
+      <div class="ui-form-item b-d">
+        <div>客户等级</div>
+        <p>501243</p>
+      </div>
+      <div class="ui-form-item b-d">
+        <div>到站</div>
+        <p>西安</p>
+      </div>
+      <div class="ui-form-item">
+        <div>到站办事处</div>
+        <p>西安雁塔区  </p>
+      </div>
+    </div>
+
+
+    <div class="details">发货人信息</div>
+    <div class="ui-form-td bg-f b-td">
+      <div class="ui-form-item b-d">
+        <div>姓名</div>
+        <input type="text" placeholder="请输入姓名">
+      </div>
+      <div class="ui-form-item b-d">
+        <div>手机号</div>
+        <input type="text" placeholder="请输入手机号码">
+      </div>
+      <div class="ui-form-item b-d">
+        <div>固定号码</div>
+        <input type="text" placeholder="请填写电话">
+      </div>
+      <div class="ui-form-item b-d">
+        <div>公司名称</div>
+        <input type="text" placeholder="请填写公司名称">
+      </div>
+      <div class="ui-form-item b-d">
+        <div>账户名称</div>
+        <input type="text" placeholder="请填写账户名称">
+      </div>
+      <div class="ui-form-item">
+        <div>税号</div>
+        <input type="text" placeholder="请填写税号">
+      </div>
+
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-assertive">
+    <button type="button" class="button-b" ng-click="goConsignUser()">保存</button>
+  </ion-footer-bar>
+</ion-view>
